@@ -142,36 +142,36 @@ export const testimonials = [
   },
 ];
 
-export const companies = [
+export const languages = [
   {
     id: 1,
-    name: "cloudinary",
-    img: "/cloud.svg",
-    nameImg: "/cloudName.svg",
+    name: "Python",
+    img: "/python-logo-only.png",
+    nameImg: "/python-logo-name.png",
   },
   {
     id: 2,
-    name: "appwrite",
-    img: "/app.svg",
-    nameImg: "/appName.svg",
+    name: "JavaScript",
+    img: "/js.png",
+    nameImg: "/javascript.png",
   },
   {
     id: 3,
-    name: "HOSTINGER",
-    img: "/host.svg",
-    nameImg: "/hostName.svg",
+    name: "React",
+    img: "/re.svg",
+    nameImg: "/react.png",
   },
   {
     id: 4,
-    name: "stream",
-    img: "/s.svg",
-    nameImg: "/streamName.svg",
+    name: "NextJS",
+    img: "/next-js.png",
+    nameImg: "/nextjs-name.png",
   },
   {
     id: 5,
-    name: "docker.",
-    img: "/dock.svg",
-    nameImg: "/dockerName.svg",
+    name: "Tailwind CSS",
+    img: "/tailwindcss.png",
+    nameImg: "/tailwindcss-name.png",
   },
 ];
 
@@ -210,13 +210,16 @@ export const socialMedia = [
   {
     id: 1,
     img: "/git.svg",
+    url: "https://github.com/aditya-2k23",
   },
   {
     id: 2,
     img: "/twit.svg",
+    url: "https://twitter.com/Tema_roon",
   },
   {
     id: 3,
     img: "/link.svg",
+    url: "https://www.linkedin.com/in/aditya-2k23/",
   },
 ];
