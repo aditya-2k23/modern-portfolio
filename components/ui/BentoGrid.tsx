@@ -67,12 +67,17 @@ export const BentoGridItem = ({
 
   const handleCopy = () => {
     const text = "holaaditya123@gmail.com";
-    navigator.clipboard.writeText(text).then(() => {
-      setCopied(true);
-      setTimeout(() => {
-        setCopied(false);
-      }, 2000);
-    })
+    navigator.clipboard
+      .writeText(text)
+      .then(() => {
+        setCopied(true);
+        setTimeout(() => {
+          setCopied(false);
+        }, 2000);
+      })
+      .catch((error) => {
+        console.error("Error copying text: ", error);
+      });
   };
 
   return (
@@ -141,7 +146,7 @@ export const BentoGridItem = ({
                 {leftLists.map((item, i) => (
                   <span
                     key={i}
-                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
+                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50
                     lg:opacity-100 rounded-lg text-center bg-[#10132E]"
                   >
                     {item}
@@ -154,7 +159,7 @@ export const BentoGridItem = ({
                 {rightLists.map((item, i) => (
                   <span
                     key={i}
-                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
+                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50
                     lg:opacity-100 rounded-lg text-center bg-[#10132E]"
                   >
                     {item}
@@ -165,9 +170,7 @@ export const BentoGridItem = ({
           )}
           {id === 6 && (
             <div className="mt-5 relative">
-              <div
-                className="absolute -bottom-6 right-0"
-              >
+              <div className="absolute bottom-5 right-0">
                 {/* <img src="/confetti.gif" alt="confetti" /> */}
                 <Lottie
                   options={defaultOptions}
@@ -184,6 +187,9 @@ export const BentoGridItem = ({
                 handleClick={handleCopy}
                 otherClasses="!bg-[#161A31] !rounded-md !z-100"
               />
+              <p className="text-base font-semibold mt-4">
+                holaaditya123@gmail.com
+              </p>
             </div>
           )}
         </div>
