@@ -2,7 +2,7 @@
 
 This is my personal portfolio website. It is built with NextJS and TailwindCSS. It is a simple, clean and modern UI based website that showcases my projects and skills.
 
-See the app live [here](https://portfolio-ten-umber.vercel.app/)
+See the app live [here](https://modern-portfolio-three-chi.vercel.app/)
 
 ### Screenshots
 
