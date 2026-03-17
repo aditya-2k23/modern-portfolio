@@ -1,230 +1,310 @@
+export const siteConfig = {
+  name: "Aditya",
+  role: "Full Stack Developer & AI Enthusiast",
+  description:
+    "Developer portfolio focused on scalable full-stack products, AI-powered systems, and clean engineering execution.",
+  resumeUrl: "/resume.pdf",
+  domain: "aditya-modern-portfolio.vercel.app",
+};
+
 export const navItems = [
   { name: "About", link: "#about" },
+  { name: "Arsenal", link: "#arsenal" },
   { name: "Projects", link: "#projects" },
-  { name: "Testimonials", link: "#testimonials" },
+  { name: "Credentials", link: "#credentials" },
   { name: "Contact", link: "#contact" },
 ];
 
-export const gridItems = [
-  {
-    id: 1,
-    title: "I prioritize client satisfaction, empowering open communication",
-    description: "",
-    className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
-    imgClassName: "w-full h-full",
-    titleClassName: "justify-end",
-    img: "/b1.svg",
-    spareImg: "",
-  },
-  {
-    id: 2,
-    title: "I'm very flexible with time zone communications",
-    description: "",
-    className: "lg:col-span-2 md:col-span-3 md:row-span-2",
-    imgClassName: "",
-    titleClassName: "justify-start",
-    img: "",
-    spareImg: "",
-  },
-  {
-    id: 3,
-    title: "My tech stack",
-    description: "I constantly try to learn & improve",
-    className: "lg:col-span-2 md:col-span-3 md:row-span-2",
-    imgClassName: "",
-    titleClassName: "justify-center",
-    img: "",
-    spareImg: "",
-  },
-  {
-    id: 4,
-    title: "Technophile with a passion for development.",
-    description: "",
-    className: "lg:col-span-2 md:col-span-3 md:row-span-1",
-    imgClassName: "",
-    titleClassName: "justify-start",
-    img: "/grid.svg",
-    spareImg: "/b4.svg",
-  },
+export const heroData = {
+  eyebrow: "B.Tech CSE Student Building for Production",
+  heading: "Hi, I\'m Aditya — Full Stack Developer & AI Enthusiast",
+  subheading:
+    "I build real-world, scalable web applications with a strong focus on developer experience, performance, and AI-powered workflows.",
+  about:
+    "Computer Science and Engineering student who loves turning ideas into robust products, from API design to polished user interfaces and reliable deployment pipelines.",
+  ctas: [
+    { label: "View Projects", href: "#projects" },
+    { label: "Download Resume", href: "/resume.pdf", external: true },
+    { label: "Contact Me", href: "#contact" },
+  ],
+  quickFacts: [
+    { label: "Location", value: "Punjab, India" },
+    {
+      label: "Degree",
+      value: "B.Tech Computer Science and Engineering",
+    },
+    { label: "Experience", value: "Multiple real-world full stack projects" },
+    { label: "Focus Areas", value: "Full Stack + AI + DevOps" },
+  ],
+};
 
-  {
-    id: 5,
-    title: "Currently building an AI-Powered Mood Tracking App",
-    description: "The Inside Scoop",
-    className: "md:col-span-3 md:row-span-2",
-    imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
-    titleClassName: "justify-center md:justify-start lg:justify-center",
-    img: "/b5.svg",
-    spareImg: "/grid.svg",
-  },
-  {
-    id: 6,
-    title: "Mail me if you'd like to collaborate!",
-    description: "",
-    className: "lg:col-span-2 md:col-span-3 md:row-span-1",
-    imgClassName: "",
-    titleClassName: "justify-center md:max-w-full max-w-60 text-center",
-    img: "",
-    spareImg: "",
-  },
-];
+export const personalInfo = {
+  name: "Aditya",
+  title: siteConfig.role,
+  location: "Punjab, India",
+  email: "holaaditya123@gmail.com",
+  phone: "+91-6284219106",
+  github: "https://github.com/aditya-2k23",
+  linkedin: "https://linkedin.com/in/aditya-2k23",
+  portfolio: `https://${siteConfig.domain}`,
+  about: heroData.about,
+};
 
-export const projects = [
+export const skillCategories = [
   {
-    id: 1,
-    title: "Shirtly 3D 👕",
-    des: "🌟A 3D website that can be used to generate colors to a T-Shirt and users can apply different textures and logos by uploading their own files.",
-    img: "/shirtly.png",
-    iconLists: ["/re.svg", "/tail.svg", "/vite.svg", "/three.svg", "/fm.svg"],
-    link: "https://shirtly-3d.vercel.app/",
-  },
-  {
-    id: 2,
-    title: "Yoom - Video Conferencing App",
-    des: "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
-    img: "/p2.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-    link: "https://zoom-clone-aditya-2k23s-projects.vercel.app/",
-  },
-  {
-    id: 3,
-    title: "Brainwave - AI Generator",
-    des: "Unleash the power of AI within Brainwave. Upgrade your productivity with Brainwave, the open AI chat app.",
-    img: "/brainwave.png",
-    iconLists: [
-      "/re.svg",
-      "/tail.svg",
-      "/vite.svg",
-      "/react-just-parallax.png",
+    category: "Programming Languages",
+    skills: [
+      { name: "TypeScript", icon: "TS" },
+      { name: "JavaScript", icon: "JS" },
+      { name: "Python", icon: "PY" },
+      { name: "C++", icon: "C++" },
+      { name: "SQL", icon: "SQL" },
     ],
-    link: "https://brainwave-five-gold.vercel.app/",
   },
   {
-    id: 4,
-    title: "Animated Apple Iphone 3D Website",
-    des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
-    img: "/p4.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-    link: "https://apple-iphone-15-sigma.vercel.app/",
+    category: "Frontend",
+    skills: [
+      { name: "Next.js", icon: "NX", featured: true },
+      { name: "React", icon: "RE", featured: true },
+      { name: "Tailwind CSS", icon: "TW" },
+      { name: "Framer Motion", icon: "FM" },
+      { name: "Shadcn/UI", icon: "UI" },
+    ],
+  },
+  {
+    category: "Backend",
+    skills: [
+      { name: "Node.js", icon: "ND", featured: true },
+      { name: "Express.js", icon: "EX" },
+      { name: "REST APIs", icon: "API" },
+      { name: "Authentication", icon: "AUTH" },
+    ],
+  },
+  {
+    category: "Databases",
+    skills: [
+      { name: "MongoDB", icon: "MG", featured: true },
+      { name: "PostgreSQL", icon: "PG" },
+      { name: "Redis", icon: "RD" },
+      { name: "Firebase", icon: "FB" },
+    ],
+  },
+  {
+    category: "DevOps & Tools",
+    skills: [
+      { name: "Docker", icon: "DK", featured: true },
+      { name: "CI/CD", icon: "CI", featured: true },
+      { name: "GitHub Actions", icon: "GH" },
+      { name: "Linux", icon: "LX" },
+      { name: "Vercel", icon: "VC" },
+    ],
+  },
+  {
+    category: "AI / Data Science",
+    skills: [
+      { name: "AI APIs", icon: "AI", featured: true },
+      { name: "RAG", icon: "RAG" },
+      { name: "Prompt Engineering", icon: "PR" },
+      { name: "Vector Databases", icon: "VD" },
+      { name: "Jupyter", icon: "JP" },
+    ],
   },
 ];
 
-export const testimonials = [
+export const skills = {
+  languages: skillCategories[0].skills.map((item) => item.name),
+  frontend: skillCategories[1].skills.map((item) => item.name),
+  backend: skillCategories[2].skills.map((item) => item.name),
+  databases: skillCategories[3].skills.map((item) => item.name),
+  devops: skillCategories[4].skills.map((item) => item.name),
+  ai: skillCategories[5].skills.map((item) => item.name),
+  data: ["Power BI", "Excel"],
+};
+
+export const featuredProjects = [
   {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+    id: "moody",
+    title: "Moody",
+    image: "/p1.svg",
+    description:
+      "AI-assisted mood tracking experience with rich emotional insights, trend visualization, and behavior analytics.",
+    techStack: ["Next.js", "React", "Firebase", "Redis", "Docker"],
+    features: [
+      "Daily and weekly mood journaling",
+      "AI-generated reflective insights",
+      "Interactive mood history dashboards",
+      "Containerized production deployment",
+    ],
+    outcome:
+      "Improved consistency in user journaling with a simple habit loop and insight-first UX.",
+    liveUrl: "https://aditya-modern-portfolio.vercel.app",
+    sourceUrl: "https://github.com/aditya-2k23",
   },
   {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+    id: "livedocs",
+    title: "LiveDocs",
+    image: "/p2.svg",
+    description:
+      "Collaborative markdown workspace engineered for real-time editing, role-based collaboration, and team productivity.",
+    techStack: ["Next.js", "React", "TypeScript", "Liveblocks", "Clerk"],
+    features: [
+      "Real-time multi-user collaboration",
+      "Threaded comments and mentions",
+      "Role-based access control",
+      "Consistent editor performance under activity",
+    ],
+    outcome:
+      "Reduced content bottlenecks for teams by enabling instant collaborative editing.",
+    liveUrl: "https://aditya-modern-portfolio.vercel.app",
+    sourceUrl: "https://github.com/aditya-2k23",
   },
   {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+    id: "store-it",
+    title: "Store It",
+    image: "/p3.svg",
+    description:
+      "Secure cloud file hub with search, sharing, and optimized storage workflows for modern web teams.",
+    techStack: ["Next.js", "TypeScript", "Appwrite", "Tailwind CSS", "Vercel"],
+    features: [
+      "Secure authentication and uploads",
+      "Rich file preview and sharing",
+      "Fast search for recent assets",
+      "Responsive dashboard experience",
+    ],
+    outcome:
+      "Improved file discovery and sharing speed for project collaborators.",
+    liveUrl: "https://aditya-modern-portfolio.vercel.app",
+    sourceUrl: "https://github.com/aditya-2k23",
   },
 ];
 
-export const languages = [
-  {
-    id: 1,
-    name: "Python",
-    img: "/python-logo-only.png",
-    nameImg: "/python-logo-name.png",
-  },
-  {
-    id: 2,
-    name: "JavaScript",
-    img: "/js.png",
-    nameImg: "/javascript.png",
-  },
-  {
-    id: 3,
-    name: "React",
-    img: "/re.svg",
-    nameImg: "/react.png",
-  },
-  {
-    id: 4,
-    name: "NextJS",
-    img: "/next-js.png",
-    nameImg: "/nextjs-name.png",
-  },
-  {
-    id: 5,
-    name: "Tailwind CSS",
-    img: "/tailwindcss.png",
-    nameImg: "/tailwindcss-name.png",
-  },
-];
+export const projects = featuredProjects.map((project, index) => ({
+  id: index + 1,
+  title: project.title,
+  des: project.description,
+  img: project.image,
+  iconLists: ["/next.svg", "/re.svg", "/tail.svg", "/ts.svg"],
+  link: project.liveUrl,
+}));
+
+export const credentialsData = {
+  education: [
+    {
+      title: "B.Tech Computer Science and Engineering",
+      institute: "Lovely Professional University",
+      score: "CGPA: 8.45",
+      year: "2022 - Present",
+    },
+    {
+      title: "Intermediate",
+      institute: "Sant Raghbir Singh Aims Sr. Sec. School",
+      score: "Percentage: 70.2%",
+      year: "2021",
+    },
+    {
+      title: "Matriculation",
+      institute: "Sant Raghbir Singh Aims Sr. Sec. School",
+      score: "Percentage: 85.4%",
+      year: "2019",
+    },
+  ],
+  certifications: [
+    {
+      name: "Oracle Certified Foundations Associate",
+      issuer: "Oracle",
+      link: "https://www.oracle.com",
+    },
+    {
+      name: "Introduction to Machine Learning",
+      issuer: "NPTEL",
+      link: "https://nptel.ac.in",
+    },
+    {
+      name: "JavaScript Algorithms and Data Structures",
+      issuer: "freeCodeCamp",
+      link: "https://www.freecodecamp.org",
+    },
+  ],
+  achievements: [
+    "Hackathon finalist in a national-level competition",
+    "Participated in multiple cloud and DevOps workshops",
+    "Maintains coding consistency through daily problem solving",
+  ],
+};
+
+export const education = credentialsData.education.map((item) => ({
+  degree: item.title,
+  institute: item.institute,
+  score: item.score,
+}));
+
+export const certifications = credentialsData.certifications;
+export const achievements = credentialsData.achievements;
+
+export const contactData = {
+  email: personalInfo.email,
+  github: personalInfo.github,
+  linkedin: personalInfo.linkedin,
+  phone: personalInfo.phone,
+};
+
+export const gridItems: Array<{
+  id: number;
+  title: string;
+  description: string;
+  className: string;
+  img: string;
+  imgClassName: string;
+  titleClassName: string;
+  spareImg: string;
+}> = [];
 
 export const workExperience = [
   {
     id: 1,
-    title: "Coding",
-    desc: "I'm passionate about coding because it lets me create and solve problems in innovative ways.",
-    className: "md:col-span-2",
+    title: "Full Stack Development",
+    desc: "Building robust web apps with modern stacks.",
     thumbnail: "/exp1.svg",
   },
   {
     id: 2,
-    title: "Movies",
-    desc: "I'm captivated by movies because they transport me to different realities and tell powerful stories.",
-    className: "md:col-span-2",
-    thumbnail: "/exp2.png",
+    title: "AI Engineering",
+    desc: "Integrating AI APIs and practical automation systems.",
+    thumbnail: "/exp2.svg",
   },
   {
     id: 3,
-    title: "Music",
-    desc: "I'm deeply into music because it moves my soul and lets me express my emotions creatively.",
-    className: "md:col-span-2",
-    thumbnail: "/exp3.png",
+    title: "Developer Tooling",
+    desc: "Crafting workflow-first solutions for developers.",
+    thumbnail: "/exp3.svg",
   },
   {
     id: 4,
-    title: "Gaming",
-    desc: "I love gaming because it immerses me in exciting worlds and challenges my skills.",
-    className: "md:col-span-2",
+    title: "Cloud & DevOps",
+    desc: "Deployment, CI/CD, and reliability-oriented practices.",
     thumbnail: "/exp4.svg",
   },
 ];
 
 export const socialMedia = [
-  {
-    id: 1,
-    img: "/git.svg",
-    url: "https://github.com/aditya-2k23",
-  },
+  { id: 1, img: "/git.svg", url: personalInfo.github },
+  { id: 2, img: "/link.svg", url: personalInfo.linkedin },
+  { id: 3, img: "/wha.svg", url: `https://wa.me/${personalInfo.phone}` },
+];
+
+export const languages = [
+  { id: 1, name: "JavaScript", img: "/javascript.png", nameImg: "/js.png" },
   {
     id: 2,
-    img: "/twit.svg",
-    url: "https://twitter.com/Tema_roon",
+    name: "Python",
+    img: "/python-logo-only.png",
+    nameImg: "/python-logo-name.png",
   },
-  {
-    id: 3,
-    img: "/link.svg",
-    url: "https://linkedin.com/in/aditya-2k23/",
-  },
+  { id: 3, name: "React", img: "/react.png", nameImg: "/re.svg" },
   {
     id: 4,
-    img: "/buymeacoffee.svg",
-    url: "https://buymeacoffee.com/temaroon",
+    name: "Tailwind",
+    img: "/tailwindcss.png",
+    nameImg: "/tailwindcss-name.png",
   },
 ];

@@ -33,6 +33,7 @@
     --ring: 240 10% 3.9%;
 
     --radius: 0.5rem;
+    --grid: 15, 23, 42;
   }
 
   .dark {
@@ -67,16 +68,36 @@
 }
 
 @layer base {
+
+  html,
+  body {
+    scroll-behavior: smooth;
+  }
+
   * {
     @apply border-border !scroll-smooth;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-manrope), sans-serif;
+    background-image:
+      linear-gradient(rgba(var(--grid), 0.22) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(var(--grid), 0.22) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-attachment: fixed;
   }
 
   button {
     @apply active:outline-none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-space-grotesk), sans-serif;
+    letter-spacing: -0.03em;
   }
 }
 
