@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { credentialsData } from "@/data";
+import { credentialsData } from "@/data/index";
 import SectionHeading from "./SectionHeading";
 
 export default function Credentials() {

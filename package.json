@@ -13,6 +13,7 @@
     "@react-three/fiber": "^9.5.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.38.0",
+    "lucide-react": "^0.577.0",
     "mini-svg-data-uri": "^1.4.4",
     "next": "^16.1.7",
     "next-themes": "^0.3.0",

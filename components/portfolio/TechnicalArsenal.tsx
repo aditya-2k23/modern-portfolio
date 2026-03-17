@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { skillCategories } from "@/data";
+import { skillCategories } from "@/data/index";
 import SectionHeading from "./SectionHeading";
 import { Button } from "@/components/ui/MovingBorder";
 

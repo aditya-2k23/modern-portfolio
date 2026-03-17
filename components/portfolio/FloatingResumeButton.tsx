@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { siteConfig } from "@/data";
+import { siteConfig } from "@/data/index";
 
 export default function FloatingResumeButton() {
   const [visible, setVisible] = useState(false);

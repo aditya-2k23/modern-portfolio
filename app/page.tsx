@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 import HeroAbout from "@/components/portfolio/HeroAbout";
 import FloatingResumeButton from "@/components/portfolio/FloatingResumeButton";
 import { FloatingNav } from "@/components/ui/FloatingNav";
-import { navItems } from "@/data";
+import { navItems } from "@/data/index";
 
 const TechnicalArsenal = dynamic(
   () => import("@/components/portfolio/TechnicalArsenal"),
@@ -22,8 +22,9 @@ export default function Home() {
 
       <FloatingNav navItems={navItems} />
 
-      <div className="mx-auto w-full max-w-6xl px-4 pb-8 sm:px-6 lg:px-8">
-        <HeroAbout />
+      <HeroAbout />
+
+      <div className="mx-auto w-full max-w-[85rem] px-4 pb-8 sm:px-6 lg:px-8 space-y-24">
         <TechnicalArsenal />
         <FeaturedProjects />
         <Credentials />

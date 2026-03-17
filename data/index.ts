@@ -17,11 +17,9 @@ export const navItems = [
 
 export const heroData = {
   eyebrow: "B.Tech CSE Student Building for Production",
-  heading: "Hi, I\'m Aditya — Full Stack Developer & AI Enthusiast",
+  heading: "Hi, I'm Aditya - Full Stack Developer & AI Enthusiast",
   subheading:
     "I build real-world, scalable web applications with a strong focus on developer experience, performance, and AI-powered workflows.",
-  about:
-    "Computer Science and Engineering student who loves turning ideas into robust products, from API design to polished user interfaces and reliable deployment pipelines.",
   ctas: [
     { label: "View Projects", href: "#projects" },
     { label: "Download Resume", href: "/resume.pdf", external: true },
@@ -36,18 +34,6 @@ export const heroData = {
     { label: "Experience", value: "Multiple real-world full stack projects" },
     { label: "Focus Areas", value: "Full Stack + AI + DevOps" },
   ],
-};
-
-export const personalInfo = {
-  name: "Aditya",
-  title: siteConfig.role,
-  location: "Punjab, India",
-  email: "holaaditya123@gmail.com",
-  phone: "+91-6284219106",
-  github: "https://github.com/aditya-2k23",
-  linkedin: "https://linkedin.com/in/aditya-2k23",
-  portfolio: `https://${siteConfig.domain}`,
-  about: heroData.about,
 };
 
 export const skillCategories = [
@@ -111,16 +97,6 @@ export const skillCategories = [
   },
 ];
 
-export const skills = {
-  languages: skillCategories[0].skills.map((item) => item.name),
-  frontend: skillCategories[1].skills.map((item) => item.name),
-  backend: skillCategories[2].skills.map((item) => item.name),
-  databases: skillCategories[3].skills.map((item) => item.name),
-  devops: skillCategories[4].skills.map((item) => item.name),
-  ai: skillCategories[5].skills.map((item) => item.name),
-  data: ["Power BI", "Excel"],
-};
-
 export const featuredProjects = [
   {
     id: "moody",
@@ -178,15 +154,6 @@ export const featuredProjects = [
   },
 ];
 
-export const projects = featuredProjects.map((project, index) => ({
-  id: index + 1,
-  title: project.title,
-  des: project.description,
-  img: project.image,
-  iconLists: ["/next.svg", "/re.svg", "/tail.svg", "/ts.svg"],
-  link: project.liveUrl,
-}));
-
 export const credentialsData = {
   education: [
     {
@@ -219,11 +186,6 @@ export const credentialsData = {
       issuer: "NPTEL",
       link: "https://nptel.ac.in",
     },
-    {
-      name: "JavaScript Algorithms and Data Structures",
-      issuer: "freeCodeCamp",
-      link: "https://www.freecodecamp.org",
-    },
   ],
   achievements: [
     "Hackathon finalist in a national-level competition",
@@ -232,79 +194,9 @@ export const credentialsData = {
   ],
 };
 
-export const education = credentialsData.education.map((item) => ({
-  degree: item.title,
-  institute: item.institute,
-  score: item.score,
-}));
-
-export const certifications = credentialsData.certifications;
-export const achievements = credentialsData.achievements;
-
 export const contactData = {
-  email: personalInfo.email,
-  github: personalInfo.github,
-  linkedin: personalInfo.linkedin,
-  phone: personalInfo.phone,
+  email: "holaaditya123@gmail.com",
+  github: "https://github.com/aditya-2k23",
+  linkedin: "https://linkedin.com/in/aditya-2k23",
+  phone: "+91-6284219106",
 };
-
-export const gridItems: Array<{
-  id: number;
-  title: string;
-  description: string;
-  className: string;
-  img: string;
-  imgClassName: string;
-  titleClassName: string;
-  spareImg: string;
-}> = [];
-
-export const workExperience = [
-  {
-    id: 1,
-    title: "Full Stack Development",
-    desc: "Building robust web apps with modern stacks.",
-    thumbnail: "/exp1.svg",
-  },
-  {
-    id: 2,
-    title: "AI Engineering",
-    desc: "Integrating AI APIs and practical automation systems.",
-    thumbnail: "/exp2.svg",
-  },
-  {
-    id: 3,
-    title: "Developer Tooling",
-    desc: "Crafting workflow-first solutions for developers.",
-    thumbnail: "/exp3.svg",
-  },
-  {
-    id: 4,
-    title: "Cloud & DevOps",
-    desc: "Deployment, CI/CD, and reliability-oriented practices.",
-    thumbnail: "/exp4.svg",
-  },
-];
-
-export const socialMedia = [
-  { id: 1, img: "/git.svg", url: personalInfo.github },
-  { id: 2, img: "/link.svg", url: personalInfo.linkedin },
-  { id: 3, img: "/wha.svg", url: `https://wa.me/${personalInfo.phone}` },
-];
-
-export const languages = [
-  { id: 1, name: "JavaScript", img: "/javascript.png", nameImg: "/js.png" },
-  {
-    id: 2,
-    name: "Python",
-    img: "/python-logo-only.png",
-    nameImg: "/python-logo-name.png",
-  },
-  { id: 3, name: "React", img: "/react.png", nameImg: "/re.svg" },
-  {
-    id: 4,
-    name: "Tailwind",
-    img: "/tailwindcss.png",
-    nameImg: "/tailwindcss-name.png",
-  },
-];
