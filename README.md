@@ -2,9 +2,9 @@
 
 This is my personal portfolio website. It is built with NextJS and TailwindCSS. It is a simple, clean and modern UI based website that showcases my projects and skills.
 
-See the app live [here](https://modern-portfolio-three-chi.vercel.app/)
+See the app [Live](https://modern-portfolio-three-chi.vercel.app/)
 
-### Screenshots
+## Screenshots
 
 ![Hero](./public/Hero.png)
 ![BentoGrid](./public/BentoGrid.png)
@@ -12,14 +12,13 @@ See the app live [here](https://modern-portfolio-three-chi.vercel.app/)
 ![Projects](./public/Projects.png)
 ![Footer](./public/Footer.png)
 
-## Tech Stack
+### Tech Stack
 
 - [React](https://reactjs.org/)
 - [NEXTJS](https://nextjs.org/)
 - [TailwindCSS](https://tailwindcss.com/)
 - [Framer Motion](https://www.framer.com/motion/)
 - [Aceternity UI](https://aceternity.io/)
-- [Sentry](https://sentry.io/)
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
