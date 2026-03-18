@@ -11,6 +11,7 @@ const FeaturedProjects = dynamic(
   () => import("@/components/portfolio/FeaturedProjects"),
 );
 const Credentials = dynamic(() => import("@/components/portfolio/Credentials"));
+const Training = dynamic(() => import("@/components/portfolio/Training"));
 const ContactSection = dynamic(
   () => import("@/components/portfolio/ContactSection"),
 );
@@ -27,6 +28,7 @@ export default function Home() {
       <div className="mx-auto w-full max-w-[85rem] px-4 pb-8 sm:px-6 lg:px-8 space-y-24">
         <TechnicalArsenal />
         <FeaturedProjects />
+        <Training />
         <Credentials />
         <ContactSection />
       </div>
