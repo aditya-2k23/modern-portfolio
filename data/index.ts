@@ -1,9 +1,41 @@
+import {
+  SiTypescript,
+  SiJavascript,
+  SiPython,
+  SiCplusplus,
+  SiNextdotjs,
+  SiReact,
+  SiTailwindcss,
+  SiFramer,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
+  SiPostgresql,
+  SiRedis,
+  SiFirebase,
+  SiDocker,
+  SiGithubactions,
+  SiLinux,
+  SiVercel,
+  SiJupyter,
+  SiOpenai,
+} from "react-icons/si";
+import {
+  FaDatabase,
+  FaServer,
+  FaLock,
+  FaBrain,
+  FaNetworkWired,
+} from "react-icons/fa";
+import { TbApi } from "react-icons/tb";
+import { MdOutlineSecurity } from "react-icons/md";
+
 export const siteConfig = {
   name: "Aditya",
   role: "Full Stack Developer & AI Enthusiast",
   description:
     "Developer portfolio focused on scalable full-stack products, AI-powered systems, and clean engineering execution.",
-  resumeUrl: "/resume.pdf",
+  resumeUrl: "/cv.pdf",
   domain: "aditya-modern-portfolio.vercel.app",
 };
 
@@ -22,7 +54,7 @@ export const heroData = {
     "I build real-world, scalable web applications with a strong focus on developer experience, performance, and AI-powered workflows.",
   ctas: [
     { label: "View Projects", href: "#projects" },
-    { label: "Download Resume", href: "/resume.pdf", external: true },
+    { label: "Download CV", href: "/cv.pdf", external: true },
     { label: "Contact Me", href: "#contact" },
   ],
   quickFacts: [
@@ -40,59 +72,59 @@ export const skillCategories = [
   {
     category: "Programming Languages",
     skills: [
-      { name: "TypeScript", icon: "TS" },
-      { name: "JavaScript", icon: "JS" },
-      { name: "Python", icon: "PY" },
-      { name: "C++", icon: "C++" },
-      { name: "SQL", icon: "SQL" },
+      { name: "TypeScript", icon: SiTypescript },
+      { name: "JavaScript", icon: SiJavascript },
+      { name: "Python", icon: SiPython },
+      { name: "C++", icon: SiCplusplus },
+      { name: "SQL", icon: FaDatabase },
     ],
   },
   {
     category: "Frontend",
     skills: [
-      { name: "Next.js", icon: "NX", featured: true },
-      { name: "React", icon: "RE", featured: true },
-      { name: "Tailwind CSS", icon: "TW" },
-      { name: "Framer Motion", icon: "FM" },
-      { name: "Shadcn/UI", icon: "UI" },
+      { name: "Next.js", icon: SiNextdotjs, featured: true },
+      { name: "React", icon: SiReact, featured: true },
+      { name: "Tailwind CSS", icon: SiTailwindcss },
+      { name: "Framer Motion", icon: SiFramer },
+      { name: "Shadcn/UI", icon: SiReact },
     ],
   },
   {
     category: "Backend",
     skills: [
-      { name: "Node.js", icon: "ND", featured: true },
-      { name: "Express.js", icon: "EX" },
-      { name: "REST APIs", icon: "API" },
-      { name: "Authentication", icon: "AUTH" },
+      { name: "Node.js", icon: SiNodedotjs, featured: true },
+      { name: "Express.js", icon: SiExpress },
+      { name: "REST APIs", icon: TbApi },
+      { name: "Authentication", icon: FaLock },
     ],
   },
   {
     category: "Databases",
     skills: [
-      { name: "MongoDB", icon: "MG", featured: true },
-      { name: "PostgreSQL", icon: "PG" },
-      { name: "Redis", icon: "RD" },
-      { name: "Firebase", icon: "FB" },
+      { name: "MongoDB", icon: SiMongodb, featured: true },
+      { name: "PostgreSQL", icon: SiPostgresql },
+      { name: "Redis", icon: SiRedis },
+      { name: "Firebase", icon: SiFirebase },
     ],
   },
   {
     category: "DevOps & Tools",
     skills: [
-      { name: "Docker", icon: "DK", featured: true },
-      { name: "CI/CD", icon: "CI", featured: true },
-      { name: "GitHub Actions", icon: "GH" },
-      { name: "Linux", icon: "LX" },
-      { name: "Vercel", icon: "VC" },
+      { name: "Docker", icon: SiDocker, featured: true },
+      { name: "CI/CD", icon: SiGithubactions, featured: true },
+      { name: "GitHub Actions", icon: SiGithubactions },
+      { name: "Linux", icon: SiLinux },
+      { name: "Vercel", icon: SiVercel },
     ],
   },
   {
     category: "AI / Data Science",
     skills: [
-      { name: "AI APIs", icon: "AI", featured: true },
-      { name: "RAG", icon: "RAG" },
-      { name: "Prompt Engineering", icon: "PR" },
-      { name: "Vector Databases", icon: "VD" },
-      { name: "Jupyter", icon: "JP" },
+      { name: "AI APIs", icon: FaBrain, featured: true },
+      { name: "RAG", icon: FaNetworkWired },
+      { name: "Prompt Engineering", icon: SiOpenai },
+      { name: "Vector Databases", icon: FaDatabase },
+      { name: "Jupyter", icon: SiJupyter },
     ],
   },
 ];
