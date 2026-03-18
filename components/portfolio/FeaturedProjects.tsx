@@ -36,8 +36,12 @@ export default function FeaturedProjects() {
             <CardContainer className="inter-var w-full p-0 py-0">
               <CardBody className="group/card relative h-auto w-full rounded-3xl border border-white/10 bg-[#0B0F19] hover:shadow-2xl hover:shadow-purple/20 transition-all">
                 <CardItem
+                  as="a"
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noreferrer"
                   translateZ="100"
-                  className="relative h-60 w-full overflow-hidden rounded-t-3xl border-b border-white/10"
+                  className="relative block h-60 w-full overflow-hidden rounded-t-3xl border-b border-white/10 cursor-pointer pointer-events-auto z-10"
                 >
                   <Image
                     src={project.image}
