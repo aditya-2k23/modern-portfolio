@@ -9,7 +9,7 @@ export default function HeroAbout() {
   return (
     <section
       id="about"
-      className="relative pt-24 pb-8 md:pt-32 flex flex-col w-full h-full min-h-screen items-center justify-center"
+      className="relative pt-16 pb-8 md:pt-20 flex flex-col w-full h-full min-h-screen items-center justify-center"
     >
       <div className="pointer-events-none absolute inset-0 overflow-hidden w-full h-full">
         <Spotlight
@@ -30,62 +30,92 @@ export default function HeroAbout() {
         </div>
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 2, duration: 0.8 }}
-          className="text-center text-xs font-semibold uppercase tracking-[0.3em] text-cyan-300/75"
-        >
-          {heroData.eyebrow}
-        </motion.p>
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-12">
+        <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center">
+          <div className="flex flex-col items-center mt-12 lg:items-start lg:mt-0">
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 2, duration: 0.8 }}
+              className="text-center lg:text-left text-xs font-semibold uppercase tracking-[0.3em] text-cyan-300/75"
+            >
+              {heroData.eyebrow}
+            </motion.p>
 
-        <TextGenerateEffect
-          words={heroData.heading}
-          className="mx-auto mt-4 max-w-5xl text-balance text-center text-4xl font-black leading-tight text-white sm:text-5xl md:text-6xl"
-        />
+            <div className="w-full text-center lg:text-left">
+              <TextGenerateEffect
+                words={heroData.heading}
+                className="mt-4 text-balance text-3xl font-black leading-none text-white sm:text-4xl md:text-5xl lg:text-left"
+              />
+            </div>
 
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 2.2, duration: 0.8 }}
+              className="w-full"
+            >
+              <p className="mt-4 text-center lg:text-left text-base leading-relaxed text-slate-300 md:text-lg max-w-2xl mx-auto lg:mx-0">
+                {heroData.subheading}
+              </p>
+
+              <div className="mt-9 flex flex-wrap items-center justify-center lg:justify-start gap-4">
+                {heroData.ctas.map((cta, index) => {
+                  const primary = index === 0;
+                  return (
+                    <a
+                      key={cta.label}
+                      href={cta.href}
+                      target={cta.external ? "_blank" : undefined}
+                      rel={cta.external ? "noreferrer" : undefined}
+                      className={[
+                        "rounded-full px-6 py-3 text-sm font-semibold transition duration-300",
+                        primary
+                          ? "bg-gradient-to-r from-cyan-400 to-blue-500 text-black shadow-[0_10px_40px_-12px_rgba(56,189,248,0.8)] hover:scale-[1.02]"
+                          : "border border-white/20 bg-transparent text-white hover:border-cyan-300/80 hover:bg-white/10",
+                      ].join(" ")}
+                    >
+                      {cta.label}
+                    </a>
+                  );
+                })}
+              </div>
+            </motion.div>
+          </div>
+
+          <div className="flex justify-center lg:justify-end">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 1.8, duration: 0.8 }}
+              className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-[430px] lg:h-[430px] overflow-hidden rounded-full border-4 border-cyan-400/20 shadow-[0_0_60px_-15px_rgba(34,211,238,0.4)] bg-slate-800/50 flex items-center justify-center flex-shrink-0"
+            >
+              <img
+                src="/me.png"
+                alt="Profile placeholder"
+                className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+              />
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Quick Facts Section Below Both Columns */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 2.2, duration: 0.8 }}
+          transition={{ delay: 2.4, duration: 0.8 }}
+          className="mt-10 sm:mt-14 w-full"
         >
-          <p className="mx-auto mt-6 max-w-3xl text-center text-base leading-relaxed text-slate-300 md:text-lg">
-            {heroData.subheading}
-          </p>
-
-          <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
-            {heroData.ctas.map((cta, index) => {
-              const primary = index === 0;
-              return (
-                <a
-                  key={cta.label}
-                  href={cta.href}
-                  target={cta.external ? "_blank" : undefined}
-                  rel={cta.external ? "noreferrer" : undefined}
-                  className={[
-                    "rounded-full px-6 py-3 text-sm font-semibold transition duration-300",
-                    primary
-                      ? "bg-gradient-to-r from-cyan-400 to-blue-500 text-black shadow-[0_10px_40px_-12px_rgba(56,189,248,0.8)] hover:scale-[1.02]"
-                      : "border border-white/20 bg-white/5 text-white hover:border-cyan-300/80 hover:bg-white/10",
-                  ].join(" ")}
-                >
-                  {cta.label}
-                </a>
-              );
-            })}
-          </div>
-
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="flex flex-wrap gap-4 w-full max-w-4xl mx-auto lg:mx-0">
             {heroData.quickFacts.map((fact) => (
               <article
                 key={fact.label}
-                className="rounded-2xl border border-white/10 bg-gradient-to-b from-white/10 to-white/[0.02] p-5 backdrop-blur"
+                className="flex-1 min-w-[140px] rounded-2xl border border-white/10 bg-gradient-to-b from-white/5 to-transparent p-5 backdrop-blur hover:border-cyan-400/30 transition-colors"
               >
-                <p className="text-xs uppercase tracking-[0.22em] text-cyan-300/70">
+                <p className="text-xs uppercase tracking-[0.22em] text-cyan-500 font-semibold">
                   {fact.label}
                 </p>
-                <p className="mt-3 text-sm font-medium leading-relaxed text-white/95">
+                <p className="mt-2 text-sm font-medium leading-relaxed text-white/90">
                   {fact.value}
                 </p>
               </article>

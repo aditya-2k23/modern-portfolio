@@ -4,6 +4,7 @@ import { FormEvent, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { contactData, heroData } from "@/data/index";
 import { Mail, Linkedin, Github, Phone, MapPin, Send } from "lucide-react";
+import { DottedGlowBackground } from "@/components/ui/dotted-glow-background";
 
 export default function ContactSection() {
   const [name, setName] = useState("");
@@ -51,8 +52,20 @@ export default function ContactSection() {
       </div>
 
       <div className="mx-auto grid max-w-5xl gap-6 lg:grid-cols-2 lg:gap-8">
-        <article className="flex flex-col justify-between rounded-[2rem] border border-white/10 bg-[#0B0F19] p-8 lg:p-10">
-          <div>
+        <article className="relative overflow-hidden group flex flex-col justify-between rounded-[2rem] border border-white/10 bg-[#0B0F19] p-8 lg:p-10">
+          <DottedGlowBackground
+            className="pointer-events-none mask-radial-to-90% mask-radial-at-center opacity-25 group-hover:opacity-50 transition-opacity duration-500"
+            opacity={1}
+            gap={10}
+            radius={2}
+            color="rgba(103,232,249,0.3)"
+            glowColor="rgba(103,232,249,1)"
+            backgroundOpacity={0}
+            speedMin={0.3}
+            speedMax={1.6}
+            speedScale={1}
+          />
+          <div className="relative z-10">
             {/* Desktop Badge */}
             <div className="hidden lg:inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-cyan-300">
               <span className="h-2 w-2 rounded-full bg-cyan-400" />
@@ -146,93 +159,104 @@ export default function ContactSection() {
           </div>
         </article>
 
-        <article className="rounded-[2rem] border border-white/10 bg-[#0B0F19] p-6 lg:p-10">
-          <form
-            className="flex flex-col gap-6 lg:gap-8"
-            onSubmit={handleSubmit}
-          >
-            <div className="flex flex-col gap-2 relative">
-              <label
-                htmlFor="name"
-                className="text-sm font-medium leading-none text-slate-300 lg:hidden"
-              >
-                Full Name
-              </label>
-              <input
-                id="name"
-                value={name}
-                onChange={(event) => setName(event.target.value)}
-                type="text"
-                required
-                placeholder="Full Name"
-                className="w-full lg:bg-transparent lg:border-t-0 lg:border-x-0 lg:border-b lg:border-white/20 lg:px-0 lg:pb-4 lg:pt-0 lg:focus:border-cyan-400 lg:rounded-none bg-white rounded-xl px-4 py-3.5 text-sm text-slate-900 lg:text-white placeholder:text-slate-400 md:placeholder:text-slate-500 outline-none transition font-medium lg:font-normal"
-              />
-            </div>
+        <article className="relative overflow-hidden group rounded-[2rem] border border-white/10 bg-[#0B0F19] p-6 lg:p-10">
+          <DottedGlowBackground
+            className="pointer-events-none mask-radial-to-90% mask-radial-at-center opacity-20 group-hover:opacity-40 transition-opacity duration-500"
+            opacity={1}
+            gap={10}
+            radius={2}
+            color="rgba(103,232,249,0.3)"
+            glowColor="rgba(103,232,249,1)"
+            backgroundOpacity={0}
+            speedMin={0.3}
+            speedMax={1.6}
+            speedScale={1}
+          />
+          <div className="relative z-10">
+            <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
+              <div className="flex flex-col gap-2 relative">
+                <label
+                  htmlFor="name"
+                  className="text-[15px] font-medium leading-none text-slate-300"
+                >
+                  Full Name
+                </label>
+                <input
+                  id="name"
+                  value={name}
+                  onChange={(event) => setName(event.target.value)}
+                  type="text"
+                  required
+                  placeholder="e.g., John Doe"
+                  className="w-full bg-[#111A28] border border-white/10 rounded-xl px-4 py-3.5 text-sm text-white placeholder:text-slate-500 focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50 outline-none transition-all shadow-[0_4px_10px_rgba(0,0,0,0.1)] focus:shadow-[0_0_15px_rgba(103,232,249,0.15)]"
+                />
+              </div>
 
-            <div className="flex flex-col gap-2 relative">
-              <label
-                htmlFor="email"
-                className="text-sm font-medium leading-none text-slate-300 lg:hidden"
-              >
-                Email Address
-              </label>
-              <input
-                id="email"
-                value={email}
-                onChange={(event) => setEmail(event.target.value)}
-                type="email"
-                required
-                placeholder="Email Address"
-                className="w-full lg:bg-transparent lg:border-t-0 lg:border-x-0 lg:border-b lg:border-white/20 lg:px-0 lg:pb-4 lg:pt-0 lg:focus:border-cyan-400 lg:rounded-none bg-white rounded-xl px-4 py-3.5 text-sm text-slate-900 lg:text-white placeholder:text-slate-400 md:placeholder:text-slate-500 outline-none transition font-medium lg:font-normal"
-              />
-            </div>
+              <div className="flex flex-col gap-2 relative">
+                <label
+                  htmlFor="email"
+                  className="text-[15px] font-medium leading-none text-slate-300"
+                >
+                  Email Address
+                </label>
+                <input
+                  id="email"
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
+                  type="email"
+                  required
+                  placeholder="e.g., john.doe@email.com"
+                  className="w-full bg-[#111A28] border border-white/10 rounded-xl px-4 py-3.5 text-sm text-white placeholder:text-slate-500 focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50 outline-none transition-all shadow-[0_4px_10px_rgba(0,0,0,0.1)] focus:shadow-[0_0_15px_rgba(103,232,249,0.15)]"
+                />
+              </div>
 
-            <div className="flex flex-col gap-2 relative">
-              <label
-                htmlFor="subject"
-                className="text-sm font-medium leading-none text-slate-300 lg:hidden"
-              >
-                Subject
-              </label>
-              <input
-                id="subject"
-                value={subject}
-                onChange={(event) => setSubject(event.target.value)}
-                type="text"
-                required
-                placeholder="Interested In"
-                className="w-full lg:bg-transparent lg:border-t-0 lg:border-x-0 lg:border-b lg:border-white/20 lg:px-0 lg:pb-4 lg:pt-0 lg:focus:border-cyan-400 lg:rounded-none bg-white rounded-xl px-4 py-3.5 text-sm text-slate-900 lg:text-white placeholder:text-slate-400 md:placeholder:text-slate-500 outline-none transition font-medium lg:font-normal"
-              />
-            </div>
+              <div className="flex flex-col gap-2 relative">
+                <label
+                  htmlFor="subject"
+                  className="text-[15px] font-medium leading-none text-slate-300"
+                >
+                  Interested In
+                </label>
+                <input
+                  id="subject"
+                  value={subject}
+                  onChange={(event) => setSubject(event.target.value)}
+                  type="text"
+                  required
+                  placeholder="e.g., Product Design"
+                  className="w-full bg-[#111A28] border border-white/10 rounded-xl px-4 py-3.5 text-sm text-white placeholder:text-slate-500 focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50 outline-none transition-all shadow-[0_4px_10px_rgba(0,0,0,0.1)] focus:shadow-[0_0_15px_rgba(103,232,249,0.15)]"
+                />
+              </div>
 
-            <div className="flex flex-col gap-2 relative">
-              <label
-                htmlFor="message"
-                className="text-sm font-medium leading-none text-slate-300 lg:hidden"
-              >
-                Your Message
-              </label>
-              <textarea
-                id="message"
-                value={message}
-                onChange={(event) => setMessage(event.target.value)}
-                required
-                rows={4}
-                placeholder="Your Message"
-                className="w-full lg:bg-transparent lg:border-t-0 lg:border-x-0 lg:border-b lg:border-white/20 lg:px-0 lg:pb-4 lg:pt-0 lg:focus:border-cyan-400 lg:rounded-none bg-transparent border border-white/10 rounded-xl px-4 py-3.5 text-sm text-white placeholder:text-slate-400 md:placeholder:text-slate-500 outline-none transition resize-none font-medium lg:font-normal"
-              />
-            </div>
+              <div className="flex flex-col gap-2 relative">
+                <label
+                  htmlFor="message"
+                  className="text-[15px] font-medium leading-none text-slate-300"
+                >
+                  Your Message
+                </label>
+                <textarea
+                  id="message"
+                  value={message}
+                  onChange={(event) => setMessage(event.target.value)}
+                  required
+                  rows={4}
+                  placeholder="Type your message here..."
+                  className="w-full bg-[#111A28] border border-white/10 rounded-xl px-4 py-3.5 text-sm text-white placeholder:text-slate-500 focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50 outline-none transition-all resize-none shadow-[0_4px_10px_rgba(0,0,0,0.1)] focus:shadow-[0_0_15px_rgba(103,232,249,0.15)]"
+                />
+              </div>
 
-            <motion.button
-              whileTap={{ scale: 0.98 }}
-              disabled={isSubmitting}
-              type="submit"
-              className="mt-4 flex w-full lg:w-max lg:min-w-48 lg:ml-auto items-center justify-center gap-2 rounded-xl bg-[#228be6] lg:bg-gradient-to-r lg:from-cyan-400 lg:to-blue-500 px-8 py-4 lg:py-3.5 text-[15px] font-bold text-white lg:text-slate-950 transition hover:opacity-90 disabled:opacity-70"
-            >
-              <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
-              <Send className="h-4 w-4" />
-            </motion.button>
-          </form>
+              <motion.button
+                whileTap={{ scale: 0.98 }}
+                disabled={isSubmitting}
+                type="submit"
+                className="mt-4 flex w-full lg:w-max lg:min-w-48 lg:ml-auto items-center justify-center gap-2 rounded-xl bg-[#228be6] lg:bg-gradient-to-r lg:from-cyan-400 lg:to-blue-500 px-8 py-4 lg:py-3.5 text-[15px] font-bold text-white lg:text-slate-950 transition hover:opacity-90 disabled:opacity-70 shadow-[0_0_20px_rgba(34,139,230,0.4)]"
+              >
+                <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
+                <Send className="h-4 w-4" />
+              </motion.button>
+            </form>
+          </div>
         </article>
       </div>
 
