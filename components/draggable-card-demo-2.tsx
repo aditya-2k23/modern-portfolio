@@ -8,16 +8,16 @@ import { skillCategories } from "@/data/index";
 
 export default function DraggableCardDemo() {
   const cardPositions = [
-    "absolute top-10 left-[5%] md:left-[10%] rotate-[-5deg]", // Programming Languages
-    "absolute top-20 left-[35%] md:left-[40%] rotate-[4deg]", // Frontend
-    "absolute top-10 right-[5%] md:right-[10%] rotate-[8deg]", // Backend
-    "absolute bottom-20 left-[10%] md:left-[15%] rotate-[6deg]", // Databases
-    "absolute bottom-10 left-[40%] md:left-[45%] rotate-[-4deg]", // DevOps & Tools
-    "absolute bottom-20 right-[10%] md:right-[15%] rotate-[-7deg]", // AI / Data Science
+    "absolute top-[0%] left-[2%] md:left-[5%] rotate-[-5deg]", // Programming Languages
+    "absolute top-[10%] left-[30%] md:left-[35%] lg:left-[40%] rotate-[4deg]", // Frontend
+    "absolute top-[0%] right-[2%] md:right-[5%] lg:right-[10%] rotate-[8deg]", // Backend
+    "absolute bottom-[5%] left-[2%] md:left-[5%] lg:left-[8%] rotate-[6deg]", // Databases
+    "absolute bottom-[0%] left-[35%] md:left-[38%] rotate-[-4deg]", // DevOps & Tools
+    "absolute bottom-[5%] right-[2%] md:right-[5%] rotate-[-7deg]", // AI / Data Science
   ];
 
   return (
-    <DraggableCardContainer className="relative flex min-h-[80vh] w-full items-center justify-center overflow-visible py-24">
+    <DraggableCardContainer className="relative flex min-h-[90vh] md:min-h-[70vh] lg:min-h-[85vh] w-full items-center justify-center overflow-visible py-24 px-4">
       <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-sm text-center text-xl font-bold text-neutral-400 md:text-3xl dark:text-neutral-600/50 pointer-events-none select-none">
         Drag around to explore the arsenal
       </p>
