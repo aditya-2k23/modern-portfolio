@@ -1,26 +1,16 @@
 # My Portfolio
 
-This is my personal portfolio website. It is built with NextJS and TailwindCSS. It is a simple, clean and modern UI based website that showcases my projects and skills.
+This is my personal portfolio website. It is built with NextJS and TailwindCSS. It is a simple, clean and modern UI based website that showcases my projects, education, certifications and skills.
 
-See the app [Live](https://modern-portfolio-three-chi.vercel.app/)
+See the app [Live](https://aditya-modern-portfolio.vercel.app/)
 
-## Screenshots
-
-![Hero](./public/Hero.png)
-![BentoGrid](./public/BentoGrid.png)
-![Languages](./public/Languages.png)
-![Projects](./public/Projects.png)
-![Footer](./public/Footer.png)
-
-### Tech Stack
+## Tech Stack
 
 - [React](https://reactjs.org/)
-- [NEXTJS](https://nextjs.org/)
+- [Next.js](https://nextjs.org/)
 - [TailwindCSS](https://tailwindcss.com/)
 - [Framer Motion](https://www.framer.com/motion/)
 - [Aceternity UI](https://aceternity.io/)
-
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ### Getting Started
 
@@ -60,28 +50,11 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 The contact form uses [EmailJS](https://www.emailjs.com/) to send messages directly from the client.
 
-1. Copy `.env.example` to `.env.local`.
-2. Add your EmailJS values:
- - `NEXT_PUBLIC_EMAILJS_SERVICE_ID`
- - `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID`
- - `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY`
-3. Restart the dev server after updating env values.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Copy `.env.example` to `.env.local`.
+- Add your EmailJS values:
+  - `NEXT_PUBLIC_EMAILJS_SERVICE_ID`
+  - `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID`
+  - `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY`
+- Restart the dev server after updating env values.
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deployed using Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
