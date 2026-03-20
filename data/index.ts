@@ -20,13 +20,7 @@ import {
   SiJupyter,
   SiOpenai,
 } from "react-icons/si";
-import {
-  FaDatabase,
-  FaServer,
-  FaLock,
-  FaBrain,
-  FaNetworkWired,
-} from "react-icons/fa";
+import { FaDatabase, FaLock, FaBrain, FaNetworkWired } from "react-icons/fa";
 import { TbApi } from "react-icons/tb";
 import { MdOutlineSecurity } from "react-icons/md";
 
@@ -49,7 +43,7 @@ export const navItems = [
 
 export const heroData = {
   eyebrow: "B.Tech CSE Student Building for Production",
-  heading: "Hi, I'm Aditya - Full Stack Developer & AI Enthusiast",
+  heading: "Hi, I'm Aditya - Aspiring Full Stack Developer & AI Enthusiast",
   subheading:
     "I build real-world, scalable web applications with a strong focus on developer experience, performance, and AI-powered workflows.",
   ctas: [
@@ -192,19 +186,19 @@ export const credentialsData = {
       title: "B.Tech Computer Science and Engineering",
       institute: "Lovely Professional University",
       score: "CGPA: 8.45",
-      year: "2022 - Present",
+      year: "2023 - Present",
     },
     {
       title: "Intermediate",
       institute: "Sant Raghbir Singh Aims Sr. Sec. School",
       score: "Percentage: 70.2%",
-      year: "2021",
+      year: "2022 - 2023",
     },
     {
       title: "Matriculation",
       institute: "Sant Raghbir Singh Aims Sr. Sec. School",
       score: "Percentage: 85.4%",
-      year: "2019",
+      year: "2020 - 2021",
     },
   ],
   certifications: [
@@ -212,17 +206,37 @@ export const credentialsData = {
       name: "Oracle Certified Foundations Associate",
       issuer: "Oracle",
       link: "https://www.oracle.com",
+      img: "/oracle.png",
+      date: "Oct 2025",
+      description:
+        "Comprehensive understanding of cloud computing fundamentals, database architecture, and OCI services. Hands-on experience with cloud infrastructure configuration, database querying, security protocols, and cost optimization strategies.",
     },
     {
       name: "Introduction to Machine Learning",
       issuer: "NPTEL",
       link: "https://nptel.ac.in",
+      img: "/nptel.png",
+      date: "Apr 2025",
+      description:
+        "In-depth study of supervised and unsupervised learning algorithms, neural network architectures, model evaluation metrics, ensemble methods, and reinforcement learning fundamentals with practical implementations.",
     },
   ],
   achievements: [
-    "Hackathon finalist in a national-level competition",
-    "Participated in multiple cloud and DevOps workshops",
-    "Maintains coding consistency through daily problem solving",
+    {
+      title: "Top 100 Hackathon Finalist",
+      description:
+        "Selected among top 100 teams in a national-level programming competition showcasing innovative problem-solving skills.",
+    },
+    {
+      title: "Cloud & DevOps Workshops",
+      description:
+        "Active participant in multiple hands-on workshops focusing on containerization, CI/CD pipelines, and cloud infrastructure.",
+    },
+    {
+      title: "Competitive Programmer",
+      description:
+        "Solved 500+ problems across leading programming platforms including LeetCode, HackerRank, and CodeChef.",
+    },
   ],
 };
 
