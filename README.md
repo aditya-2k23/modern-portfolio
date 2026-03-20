@@ -56,6 +56,17 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+### EmailJS setup (contact form)
+
+The contact form uses [EmailJS](https://www.emailjs.com/) to send messages directly from the client.
+
+1. Copy `.env.example` to `.env.local`.
+2. Add your EmailJS values:
+ - `NEXT_PUBLIC_EMAILJS_SERVICE_ID`
+ - `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID`
+ - `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY`
+3. Restart the dev server after updating env values.
+
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
