@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { skillCategories } from "@/data/index";
 import SectionHeading from "./SectionHeading";
-import DraggableCardDemo from "../draggable-card-demo-2";
+import ArsenalHoverEffect from "./ArsenalHoverEffect";
 
 export default function TechnicalArsenal() {
   return (
@@ -15,7 +15,7 @@ export default function TechnicalArsenal() {
       />
 
       <div className="w-full relative mt-8">
-        <DraggableCardDemo />
+        <ArsenalHoverEffect />
       </div>
     </section>
   );
