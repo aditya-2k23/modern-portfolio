@@ -5,6 +5,18 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export const SplashScreen = () => {
   const [isVisible, setIsVisible] = useState(true);
+  const [reducedMotion, setReducedMotion] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || !window.matchMedia) return;
+
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const sync = () => setReducedMotion(mediaQuery.matches);
+    sync();
+
+    mediaQuery.addEventListener("change", sync);
+    return () => mediaQuery.removeEventListener("change", sync);
+  }, []);
 
   useEffect(() => {
     // 1500ms timeout for the splash screen state
@@ -78,14 +90,16 @@ export const SplashScreen = () => {
                 animate={{
                   opacity: 1,
                   y: 0,
-                  backgroundPosition: ["0% center", "-200% center"],
+                  backgroundPosition: reducedMotion
+                    ? "0% center"
+                    : ["0% center", "-200% center"],
                 }}
                 transition={{
                   opacity: { duration: 0.6 },
                   y: { duration: 0.6 },
                   backgroundPosition: {
-                    duration: 3,
-                    repeat: Infinity,
+                    duration: reducedMotion ? 0 : 3,
+                    repeat: reducedMotion ? 0 : Infinity,
                     ease: "linear",
                   },
                 }}

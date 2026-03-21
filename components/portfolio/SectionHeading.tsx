@@ -5,7 +5,6 @@ type SectionHeadingProps = {
 };
 
 export default function SectionHeading({
-  eyebrow,
   title,
   description,
 }: SectionHeadingProps) {
@@ -14,7 +13,7 @@ export default function SectionHeading({
   const restOfTitle = words.join(" ");
 
   return (
-    <header className="mx-auto mb-10 max-w-3xl text-center md:mb-14">
+    <header className="mx-auto mb-6 md:mb-8 max-w-3xl text-center">
       {/* <p className="mb-3 text-xs font-semibold uppercase tracking-[0.32em] text-cyan-300/80">
         {eyebrow}
       </p> */}

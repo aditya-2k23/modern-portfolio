@@ -159,6 +159,19 @@ export const DottedGlowBackground = ({
     let raf = 0;
     let stopped = false;
     let isVisible = true;
+    const prefersReducedMotion =
+      typeof window !== "undefined" && window.matchMedia
+        ? window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        : false;
+    const coarsePointer =
+      typeof window !== "undefined" && window.matchMedia
+        ? window.matchMedia("(pointer: coarse)").matches
+        : false;
+    const lowPowerDevice =
+      coarsePointer ||
+      (typeof navigator !== "undefined" && navigator.hardwareConcurrency <= 4);
+    const targetFps = prefersReducedMotion ? 12 : lowPowerDevice ? 20 : 30;
+    const frameInterval = 1000 / targetFps;
 
     const dpr = Math.min(Math.max(1, window.devicePixelRatio || 1), 2);
 
@@ -204,7 +217,7 @@ export const DottedGlowBackground = ({
 
     regenDots();
 
-    let last = performance.now();
+    let lastFrameTime = 0;
 
     const draw = (now: number) => {
       if (stopped) return;
@@ -212,8 +225,13 @@ export const DottedGlowBackground = ({
         raf = requestAnimationFrame(draw);
         return;
       }
-      const dt = (now - last) / 1000; // seconds
-      last = now;
+
+      if (now - lastFrameTime < frameInterval) {
+        raf = requestAnimationFrame(draw);
+        return;
+      }
+
+      lastFrameTime = now;
       const { width, height } = container.getBoundingClientRect();
 
       ctx.clearRect(0, 0, el.width, el.height);
@@ -243,6 +261,7 @@ export const DottedGlowBackground = ({
       ctx.fillStyle = resolvedColor;
 
       const time = (now / 1000) * Math.max(speedScale, 0);
+      const glowThreshold = lowPowerDevice ? 0.72 : 0.6;
       for (let i = 0; i < dots.length; i++) {
         const d = dots[i];
         // Linear triangle wave 0..1..0 for linear glow/dim
@@ -251,10 +270,10 @@ export const DottedGlowBackground = ({
         const a = 0.25 + 0.55 * lin; // 0.25..0.8 linearly
 
         // draw glow when bright
-        if (a > 0.6) {
-          const glow = (a - 0.6) / 0.4; // 0..1
+        if (a > glowThreshold) {
+          const glow = (a - glowThreshold) / (1 - glowThreshold); // 0..1
           ctx.shadowColor = resolvedGlowColor;
-          ctx.shadowBlur = 6 * glow;
+          ctx.shadowBlur = lowPowerDevice ? 3 * glow : 6 * glow;
         } else {
           ctx.shadowColor = "transparent";
           ctx.shadowBlur = 0;

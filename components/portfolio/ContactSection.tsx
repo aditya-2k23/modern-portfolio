@@ -3,7 +3,7 @@
 import { FormEvent, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-import { contactData, heroData } from "@/data/index";
+import { contactData } from "@/data/index";
 import { Mail, Linkedin, Github, Phone, Send } from "lucide-react";
 import { DottedGlowBackground } from "@/components/ui/dotted-glow-background";
 
@@ -21,10 +21,6 @@ export default function ContactSection() {
     message: string;
     type: "success" | "error";
   } | null>(null);
-
-  const location =
-    heroData.quickFacts.find((f) => f.label === "Location")?.value ||
-    "Punjab, India";
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();

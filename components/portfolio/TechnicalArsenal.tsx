@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { skillCategories } from "@/data/index";
 import SectionHeading from "./SectionHeading";
 import ArsenalHoverEffect from "./ArsenalHoverEffect";
 
@@ -11,10 +9,10 @@ export default function TechnicalArsenal() {
       <SectionHeading
         eyebrow="Section 2"
         title="Technical Arsenal"
-        description="Categorized stack depth with focus on production-ready tools for modern full-stack and AI workflows."
+        description="A production-oriented toolkit used to build modern full-stack and AI-enabled applications. I prioritize clean system design, efficient data handling, intelligent caching, and smooth deployment workflows to deliver performant and maintainable software."
       />
 
-      <div className="w-full relative mt-8">
+      <div className="w-full relative">
         <ArsenalHoverEffect />
       </div>
     </section>

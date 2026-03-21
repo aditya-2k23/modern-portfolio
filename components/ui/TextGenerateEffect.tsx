@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { motion, stagger, useAnimate } from "framer-motion";
 import { cn } from "@/utils/cn";
 
@@ -14,7 +14,7 @@ export const TextGenerateEffect = ({
   delay?: number;
 }) => {
   const [scope, animate] = useAnimate();
-  let wordsArray = words.split(" ");
+  const wordsArray = useMemo(() => words.split(" "), [words]);
   useEffect(() => {
     animate(
       "span",

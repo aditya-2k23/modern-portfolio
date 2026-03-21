@@ -1,37 +1,61 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { memo, useCallback, useRef } from "react";
 import { motion } from "framer-motion";
 import { heroData } from "@/data/index";
 import { Spotlight } from "@/components/ui/Spotlight";
 import { TextGenerateEffect } from "@/components/ui/TextGenerateEffect";
-import { cn } from "@/utils/cn";
+import Image from "next/image";
 
-const FactCard = ({ label, value }: { label: string; value: string }) => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isHovering, setIsHovering] = useState(false);
+const FactCard = memo(({ label, value }: { label: string; value: string }) => {
+  const cardRef = useRef<HTMLElement | null>(null);
+  const frameRef = useRef<number | null>(null);
 
-  const handleMouseMove = (event: React.MouseEvent<HTMLElement>) => {
-    const { clientX, clientY } = event;
-    const rect = event.currentTarget.getBoundingClientRect();
-    const x = (clientX - (rect.left + rect.width / 2)) / 20;
-    const y = (clientY - (rect.top + rect.height / 2)) / 20;
-    setMousePosition({ x, y });
-  };
+  const setTransform = useCallback((x: number, y: number, hovered: boolean) => {
+    if (!cardRef.current) return;
+    cardRef.current.style.transform = hovered
+      ? `translate3d(${x}px, ${y}px, 0) scale3d(1.05, 1.05, 1)`
+      : "translate3d(0px, 0px, 0) scale3d(1, 1, 1)";
+  }, []);
+
+  const handleMouseMove = useCallback(
+    (event: React.MouseEvent<HTMLElement>) => {
+      const { clientX, clientY } = event;
+      const rect = event.currentTarget.getBoundingClientRect();
+      const x = (clientX - (rect.left + rect.width / 2)) / 20;
+      const y = (clientY - (rect.top + rect.height / 2)) / 20;
+
+      if (frameRef.current !== null) {
+        cancelAnimationFrame(frameRef.current);
+      }
+      frameRef.current = requestAnimationFrame(() => {
+        setTransform(x, y, true);
+      });
+    },
+    [setTransform],
+  );
+
+  const handleMouseEnter = useCallback(() => {
+    setTransform(0, 0, true);
+  }, [setTransform]);
+
+  const handleMouseLeave = useCallback(() => {
+    if (frameRef.current !== null) {
+      cancelAnimationFrame(frameRef.current);
+      frameRef.current = null;
+    }
+    setTransform(0, 0, false);
+  }, [setTransform]);
 
   return (
-    <motion.article
+    <article
+      ref={cardRef}
       onMouseMove={handleMouseMove}
-      onMouseEnter={() => setIsHovering(true)}
-      onMouseLeave={() => {
-        setIsHovering(false);
-        setMousePosition({ x: 0, y: 0 });
-      }}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       style={{
-        transform: isHovering
-          ? `translate3d(${mousePosition.x}px, ${mousePosition.y}px, 0) scale3d(1.05, 1.05, 1)`
-          : "translate3d(0px, 0px, 0) scale3d(1, 1, 1)",
         transition: "transform 0.1s ease-out",
+        willChange: "transform",
       }}
       className="flex-1 min-w-35 rounded-2xl border border-white/10 bg-linear-to-b from-white/5 to-transparent p-5 backdrop-blur hover:border-cyan-400/30 transition-colors"
     >
@@ -41,9 +65,9 @@ const FactCard = ({ label, value }: { label: string; value: string }) => {
       <p className="mt-2 text-sm font-medium leading-relaxed text-white/90">
         {value}
       </p>
-    </motion.article>
+    </article>
   );
-};
+});
 
 export default function HeroAbout() {
   return (
@@ -131,9 +155,12 @@ export default function HeroAbout() {
               transition={{ delay: 2.5, duration: 0.8 }}
               className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-107.5 lg:h-107.5 overflow-hidden rounded-full border-4 border-cyan-400/20 shadow-[0_0_60px_-15px_rgba(34,211,238,0.4)] bg-slate-800/50 flex items-center justify-center shrink-0"
             >
-              <img
+              <Image
                 src="/me.png"
                 alt="Profile placeholder"
+                fill
+                priority
+                sizes="(max-width: 768px) 70vw, (max-width: 1200px) 40vw, 430px"
                 className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
               />
             </motion.div>

@@ -1,5 +1,6 @@
 "use client";
 
+import { useMemo } from "react";
 import { HoverEffect } from "@/components/ui/card-hover-effect";
 import { cn } from "@/utils/cn";
 import { skillCategories } from "@/data/index";
@@ -106,75 +107,77 @@ export default function ArsenalHoverEffect() {
     "Data Science",
   ];
 
-  const sortedCategories = [...skillCategories].sort(
-    (a, b) =>
-      orderedCategories.indexOf(a.category) -
-      orderedCategories.indexOf(b.category),
-  );
+  const items = useMemo(() => {
+    const sortedCategories = [...skillCategories].sort(
+      (a, b) =>
+        orderedCategories.indexOf(a.category) -
+        orderedCategories.indexOf(b.category),
+    );
 
-  const items = sortedCategories.map((bucket) => {
-    const {
-      icon: Icon,
-      subtitle,
-      iconColor,
-      iconBg,
-    } = getHeaderInfo(bucket.category);
+    return sortedCategories.map((bucket) => {
+      const {
+        icon: Icon,
+        subtitle,
+        iconColor,
+        iconBg,
+      } = getHeaderInfo(bucket.category);
 
-    return {
-      title: (
-        <div className="flex items-center gap-4 mb-2">
-          <div
-            className={cn(
-              "flex shrink-0 items-center justify-center w-12 h-12 rounded-xl border",
-              iconBg,
-              iconColor,
-            )}
-          >
-            <Icon size={24} />
+      return {
+        title: (
+          <div className="flex items-center gap-4">
+            <div
+              className={cn(
+                "flex shrink-0 items-center justify-center w-12 h-12 rounded-xl border",
+                iconBg,
+                iconColor,
+              )}
+            >
+              <Icon size={24} />
+            </div>
+            <div className="flex flex-col">
+              <h3 className="text-lg sm:text-xl font-bold text-neutral-800 dark:text-neutral-100 tracking-wide uppercase">
+                {bucket.category}
+              </h3>
+              <p className="text-[10px] sm:text-xs text-neutral-500 dark:text-neutral-400 uppercase tracking-widest font-semibold mt-0.5">
+                {subtitle}
+              </p>
+            </div>
           </div>
-          <div className="flex flex-col">
-            <h3 className="text-lg sm:text-xl font-bold text-neutral-800 dark:text-neutral-100 tracking-wide uppercase">
-              {bucket.category}
-            </h3>
-            <p className="text-[10px] sm:text-xs text-neutral-500 dark:text-neutral-400 uppercase tracking-widest font-semibold mt-0.5">
-              {subtitle}
-            </p>
-          </div>
-        </div>
-      ),
-      className: getGridSpan(bucket.category),
-      description: (
-        <div className="relative z-10 flex flex-col h-full gap-4 mt-6">
-          <ul className="flex flex-wrap gap-2 pointer-events-none">
-            {bucket.skills.map((skill) => (
-              <li
-                key={skill.name}
-                className={cn(
-                  "flex items-center gap-2 rounded-full border px-3 py-1.5 text-[13px] font-medium",
-                  skill.featured
-                    ? "border-cyan-500/30 bg-cyan-500/10 text-cyan-500 dark:text-cyan-300"
-                    : "border-black/5 dark:border-white/10 bg-black/5 dark:bg-white/5 text-slate-700 dark:text-slate-300",
-                )}
-              >
-                <span
+        ),
+        className: getGridSpan(bucket.category),
+        description: (
+          <div className="relative z-10 flex flex-col h-full gap-4 mt-6">
+            <ul className="flex flex-wrap gap-2 pointer-events-none">
+              {bucket.skills.map((skill) => (
+                <li
+                  key={skill.name}
                   className={cn(
-                    "flex items-center justify-center rounded-full p-1",
+                    "flex items-center gap-2 rounded-full border px-3 py-1.5 text-[13px] font-medium",
                     skill.featured
-                      ? "bg-cyan-500/20 text-cyan-600 dark:text-cyan-200"
-                      : "bg-black/10 dark:bg-white/10 text-slate-600 dark:text-slate-400",
+                      ? "border-cyan-500/30 bg-cyan-500/10 text-cyan-500 dark:text-cyan-300"
+                      : "border-black/5 dark:border-white/10 bg-black/5 dark:bg-white/5 text-slate-700 dark:text-slate-300",
                   )}
-                  style={skill.color ? { color: skill.color } : {}}
                 >
-                  <skill.icon className="w-3.5 h-3.5" />
-                </span>
-                <span>{skill.name}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ),
-    };
-  });
+                  <span
+                    className={cn(
+                      "flex items-center justify-center rounded-full p-1",
+                      skill.featured
+                        ? "bg-cyan-500/20 text-cyan-600 dark:text-cyan-200"
+                        : "bg-black/10 dark:bg-white/10 text-slate-600 dark:text-slate-400",
+                    )}
+                    style={skill.color ? { color: skill.color } : {}}
+                  >
+                    <skill.icon className="w-3.5 h-3.5" />
+                  </span>
+                  <span>{skill.name}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ),
+      };
+    });
+  }, []);
 
   return (
     <div className="w-full">

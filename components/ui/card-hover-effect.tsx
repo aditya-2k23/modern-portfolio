@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion } from "framer-motion";
 
-import { useState } from "react";
+import { useCallback, useRef, useState } from "react";
 
 export const HoverEffect = ({
   items,
@@ -68,30 +68,54 @@ export const Card = ({
   className?: string;
   children: React.ReactNode;
 }) => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isHovering, setIsHovering] = useState(false);
+  const cardRef = useRef<HTMLDivElement | null>(null);
+  const frameRef = useRef<number | null>(null);
 
-  const handleMouseMove = (event: React.MouseEvent<HTMLElement>) => {
-    const { clientX, clientY } = event;
-    const rect = event.currentTarget.getBoundingClientRect();
-    const x = (clientX - (rect.left + rect.width / 2)) / 20;
-    const y = (clientY - (rect.top + rect.height / 2)) / 20;
-    setMousePosition({ x, y });
-  };
+  const setTransform = useCallback((x: number, y: number, hovered: boolean) => {
+    if (!cardRef.current) return;
+    cardRef.current.style.transform = hovered
+      ? `translate3d(${x}px, ${y}px, 0) scale3d(1, 1, 1)`
+      : "translate3d(0px, 0px, 0) scale3d(1, 1, 1)";
+  }, []);
+
+  const handleMouseMove = useCallback(
+    (event: React.MouseEvent<HTMLElement>) => {
+      const { clientX, clientY } = event;
+      const rect = event.currentTarget.getBoundingClientRect();
+      const x = (clientX - (rect.left + rect.width / 2)) / 20;
+      const y = (clientY - (rect.top + rect.height / 2)) / 20;
+
+      if (frameRef.current !== null) {
+        cancelAnimationFrame(frameRef.current);
+      }
+      frameRef.current = requestAnimationFrame(() => {
+        setTransform(x, y, true);
+      });
+    },
+    [setTransform],
+  );
+
+  const handleMouseEnter = useCallback(() => {
+    setTransform(0, 0, true);
+  }, [setTransform]);
+
+  const handleMouseLeave = useCallback(() => {
+    if (frameRef.current !== null) {
+      cancelAnimationFrame(frameRef.current);
+      frameRef.current = null;
+    }
+    setTransform(0, 0, false);
+  }, [setTransform]);
 
   return (
-    <motion.div
+    <div
+      ref={cardRef}
       onMouseMove={handleMouseMove}
-      onMouseEnter={() => setIsHovering(true)}
-      onMouseLeave={() => {
-        setIsHovering(false);
-        setMousePosition({ x: 0, y: 0 });
-      }}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       style={{
-        transform: isHovering
-          ? `translate3d(${mousePosition.x}px, ${mousePosition.y}px, 0) scale3d(1, 1, 1)`
-          : "translate3d(0px, 0px, 0) scale3d(1, 1, 1)",
         transition: "transform 0.1s ease-out",
+        willChange: "transform",
       }}
       className={cn(
         "rounded-3xl h-full w-full p-4 overflow-hidden bg-white dark:bg-[#0B0F19] border border-neutral-200 dark:border-white/10 group-hover:border-neutral-300 dark:group-hover:border-white/20 relative z-20 transition-colors shadow-xl",
@@ -105,7 +129,7 @@ export const Card = ({
       <div className="relative z-50 h-full flex flex-col">
         <div className="p-4 h-full">{children}</div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 export const CardTitle = ({

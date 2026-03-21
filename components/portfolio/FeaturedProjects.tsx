@@ -8,11 +8,11 @@ import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 
 export default function FeaturedProjects() {
   return (
-    <section id="projects" className="pt-24">
+    <section id="projects" className="pt-20">
       <SectionHeading
         eyebrow="Section 3"
         title="Featured Projects"
-        description="Selected builds that combine engineering quality, thoughtful UX, and measurable outcomes."
+        description="Real-world applications I designed and built end-to-end, focusing on performance, reliability, modern UX patterns and practical problem solving across full-stack and AI workflows."
       />
 
       <motion.div
@@ -33,7 +33,7 @@ export default function FeaturedProjects() {
               show: { opacity: 1, y: 0 },
             }}
           >
-            <CardContainer className="inter-var w-full p-0 py-0">
+            <CardContainer className="inter-var w-full p-0">
               <CardBody className="group/card relative h-auto w-full rounded-3xl border border-white/10 bg-[#0B0F19] hover:shadow-2xl hover:shadow-purple/20 transition-all">
                 <CardItem
                   as="a"
