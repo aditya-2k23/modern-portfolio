@@ -1,6 +1,12 @@
 "use client";
 import { cn } from "@/utils/cn";
-import React, { useRef, useState, useEffect } from "react";
+import React, {
+  useRef,
+  useState,
+  useEffect,
+  createContext,
+  useContext,
+} from "react";
 import {
   motion,
   useMotionValue,
@@ -10,6 +16,9 @@ import {
   useVelocity,
   useAnimationControls,
 } from "framer-motion";
+
+const DraggableContext =
+  createContext<React.RefObject<HTMLDivElement | null> | null>(null);
 
 export const DraggableCardBody = ({
   className,
@@ -21,29 +30,24 @@ export const DraggableCardBody = ({
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   const cardRef = useRef<HTMLDivElement>(null);
+  const containerRef = useContext(DraggableContext);
   const controls = useAnimationControls();
-  const [constraints, setConstraints] = useState({
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-  });
 
   const velocityX = useVelocity(mouseX);
   const velocityY = useVelocity(mouseY);
 
   const springConfig = {
-    stiffness: 100,
-    damping: 20,
-    mass: 0.5,
+    stiffness: 80,
+    damping: 30,
+    mass: 1,
   };
 
   const rotateX = useSpring(
-    useTransform(mouseY, [-300, 300], [25, -25]),
+    useTransform(mouseY, [-300, 300], [10, -10]),
     springConfig,
   );
   const rotateY = useSpring(
-    useTransform(mouseX, [-300, 300], [-25, 25]),
+    useTransform(mouseX, [-300, 300], [-10, 10]),
     springConfig,
   );
 
@@ -56,26 +60,6 @@ export const DraggableCardBody = ({
     useTransform(mouseX, [-300, 0, 300], [0.2, 0, 0.2]),
     springConfig,
   );
-
-  useEffect(() => {
-    const updateConstraints = () => {
-      if (typeof window !== "undefined") {
-        setConstraints({
-          top: -window.innerHeight / 2,
-          left: -window.innerWidth / 2,
-          right: window.innerWidth / 2,
-          bottom: window.innerHeight / 2,
-        });
-      }
-    };
-
-    updateConstraints();
-    window.addEventListener("resize", updateConstraints);
-
-    return () => {
-      window.removeEventListener("resize", updateConstraints);
-    };
-  }, []);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const { clientX, clientY } = e;
@@ -103,8 +87,9 @@ export const DraggableCardBody = ({
     <motion.div
       ref={cardRef}
       drag
+      dragElastic={0.1}
       whileDrag={{ cursor: "grabbing" }}
-      dragConstraints={constraints}
+      dragConstraints={containerRef ?? undefined}
       onDragStart={() => {
         document.body.style.cursor = "grabbing";
       }}
@@ -178,7 +163,15 @@ export const DraggableCardContainer = ({
   className?: string;
   children?: React.ReactNode;
 }) => {
+  const containerRef = useRef<HTMLDivElement>(null);
   return (
-    <div className={cn("perspective-[3000px]", className)}>{children}</div>
+    <DraggableContext.Provider value={containerRef}>
+      <div
+        ref={containerRef}
+        className={cn("perspective-[3000px] w-full h-full relative", className)}
+      >
+        {children}
+      </div>
+    </DraggableContext.Provider>
   );
 };
