@@ -139,8 +139,8 @@ export const featuredProjects = [
     ],
     outcome:
       "Improved consistency in user journaling with a simple habit loop and insight-first UX.",
-    liveUrl: "https://aditya-modern-portfolio.vercel.app",
-    sourceUrl: "https://github.com/aditya-2k23",
+    liveUrl: "https://moody-adi.netlify.app",
+    sourceUrl: "https://github.com/aditya-2k23/moody",
   },
   {
     id: "livedocs",
@@ -157,8 +157,8 @@ export const featuredProjects = [
     ],
     outcome:
       "Reduced content bottlenecks for teams by enabling instant collaborative editing.",
-    liveUrl: "https://aditya-modern-portfolio.vercel.app",
-    sourceUrl: "https://github.com/aditya-2k23",
+    liveUrl: "livedocs-adi.vercel.app",
+    sourceUrl: "https://github.com/aditya-2k23/livedocs",
   },
   {
     id: "store-it",
@@ -175,8 +175,8 @@ export const featuredProjects = [
     ],
     outcome:
       "Improved file discovery and sharing speed for project collaborators.",
-    liveUrl: "https://aditya-modern-portfolio.vercel.app",
-    sourceUrl: "https://github.com/aditya-2k23",
+    liveUrl: "store-it-adi.vercel.app",
+    sourceUrl: "https://github.com/aditya-2k23/store-it",
   },
 ];
 
@@ -191,7 +191,7 @@ export const credentialsData = {
     {
       title: "Intermediate",
       institute: "Sant Raghbir Singh Aims Sr. Sec. School",
-      score: "Percentage: 70.2%",
+      score: "Percentage: 86.2%",
       year: "2022 - 2023",
     },
     {
