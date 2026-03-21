@@ -80,11 +80,24 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="relative overflow-hidden pb-24 pt-24">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[url('/footer-grid.svg')] bg-[length:900px_auto] bg-top bg-no-repeat opacity-25"
-      />
+    <section
+      id="contact"
+      className="relative overflow-hidden pb-24 pt-24 w-full"
+    >
+      <div className="w-full absolute left-0 top-0 pointer-events-none z-0 rotate-180">
+        <img
+          src="/footer-grid.svg"
+          alt="grid"
+          className="w-full h-full object-cover opacity-50"
+        />
+      </div>
+      <div className="w-full absolute left-0 bottom-0 pointer-events-none z-0">
+        <img
+          src="/footer-grid.svg"
+          alt="grid"
+          className="w-full h-full object-cover opacity-50"
+        />
+      </div>
       <div className="relative z-10">
         <div className="mb-14 flex flex-col items-center justify-center space-y-4">
           {/* Mobile Badge - visibly hidden on desktop, matches mobile design */}
@@ -103,7 +116,7 @@ export default function ContactSection() {
         </div>
 
         <div className="mx-auto grid max-w-5xl gap-6 lg:grid-cols-2 lg:gap-8">
-          <article className="relative overflow-hidden group flex flex-col justify-between rounded-[2rem] border border-white/10 bg-[#0B0F19] p-8 lg:p-10">
+          <article className="relative overflow-hidden group flex flex-col justify-between rounded-4xl border border-white/10 bg-[#0B0F19] p-8 lg:p-10">
             <DottedGlowBackground
               className="pointer-events-none mask-radial-to-90% mask-radial-at-center opacity-25 group-hover:opacity-50 transition-opacity duration-500"
               opacity={1}
@@ -210,7 +223,7 @@ export default function ContactSection() {
             </div>
           </article>
 
-          <article className="relative overflow-hidden group rounded-[2rem] border border-white/10 bg-[#0B0F19] p-6 lg:p-10">
+          <article className="relative overflow-hidden group rounded-4xl border border-white/10 bg-[#0B0F19] p-6 lg:p-10">
             <DottedGlowBackground
               className="pointer-events-none mask-radial-to-90% mask-radial-at-center opacity-20 group-hover:opacity-40 transition-opacity duration-500"
               opacity={1}
@@ -301,7 +314,7 @@ export default function ContactSection() {
                   whileTap={{ scale: 0.98 }}
                   disabled={isSubmitting}
                   type="submit"
-                  className="mt-4 flex w-full lg:w-max lg:min-w-48 lg:ml-auto items-center justify-center gap-2 rounded-xl bg-[#228be6] lg:bg-gradient-to-r lg:from-cyan-400 lg:to-blue-500 px-8 py-4 lg:py-3.5 text-[15px] font-bold text-white lg:text-slate-950 transition hover:opacity-90 disabled:opacity-70 shadow-[0_0_20px_rgba(34,139,230,0.4)]"
+                  className="mt-4 flex w-full lg:w-max lg:min-w-48 lg:ml-auto items-center justify-center gap-2 rounded-xl bg-[#228be6] lg:bg-linear-to-r lg:from-cyan-400 lg:to-blue-500 px-8 py-4 lg:py-3.5 text-[15px] font-bold text-white lg:text-slate-950 transition hover:opacity-90 disabled:opacity-70 shadow-[0_0_20px_rgba(34,139,230,0.4)]"
                 >
                   <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
                   <Send className="h-4 w-4" />
@@ -318,7 +331,7 @@ export default function ContactSection() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
-            className={`fixed bottom-6 right-6 z-[100] rounded-lg border px-4 py-3 text-sm shadow-lg ${
+            className={`fixed bottom-6 right-6 z-100 rounded-lg border px-4 py-3 text-sm shadow-lg ${
               toast.type === "success"
                 ? "border-cyan-300/30 bg-slate-900/95 text-cyan-200"
                 : "border-rose-300/40 bg-slate-900/95 text-rose-200"
