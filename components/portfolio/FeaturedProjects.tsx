@@ -109,7 +109,7 @@ export default function FeaturedProjects() {
                       href={project.sourceUrl}
                       target="_blank"
                       rel="noreferrer"
-                      className="rounded-xl px-2 sm:px-4 py-3 text-[13px] sm:text-sm font-semibold text-slate-300 transition hover:text-purple cursor-pointer flex-1 text-center"
+                      className="rounded-xl px-2 sm:px-4 py-3 text-[13px] sm:text-sm font-semibold text-slate-300 transition hover:text-purple cursor-pointer flex-1 text-center ring-2 ring-white/10 hover:ring-purple"
                     >
                       Source Code
                     </CardItem>

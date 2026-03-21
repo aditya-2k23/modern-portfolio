@@ -26,7 +26,7 @@ export default function HeroAbout() {
         />
 
         <div className="absolute inset-0 h-full w-full bg-grid-white/[0.06]">
-          <div className="absolute inset-0 bg-[#020617] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
+          <div className="absolute inset-0 bg-[#020617] mask-[radial-gradient(ellipse_at_center,transparent_20%,black)]" />
         </div>
       </div>
 
@@ -72,7 +72,7 @@ export default function HeroAbout() {
                       className={[
                         "rounded-full px-6 py-3 text-sm font-semibold transition duration-300",
                         primary
-                          ? "bg-gradient-to-r from-cyan-400 to-blue-500 text-black shadow-[0_10px_40px_-12px_rgba(56,189,248,0.8)] hover:scale-[1.02]"
+                          ? "bg-linear-to-r from-cyan-400 to-blue-500 text-black shadow-[0_10px_40px_-12px_rgba(56,189,248,0.8)] hover:scale-[1.02]"
                           : "border border-white/20 bg-transparent text-white hover:border-cyan-300/80 hover:bg-white/10",
                       ].join(" ")}
                     >

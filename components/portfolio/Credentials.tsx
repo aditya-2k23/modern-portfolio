@@ -32,8 +32,8 @@ export default function Credentials() {
   return (
     <section id="credentials" className="pt-24 relative overflow-hidden px-24">
       {/* Background Mesh/Grid */}
-      <div className="absolute inset-0 z-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-cyan-900/10 via-transparent to-transparent opacity-50 blur-3xl" />
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
+      <div className="absolute inset-0 z-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-cyan-900/10 via-transparent to-transparent opacity-50 blur-3xl" />
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px] mask-[radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
 
       <div className="relative z-10">
         <SectionHeading
@@ -50,13 +50,13 @@ export default function Credentials() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
-              className="relative p-1 rounded-2xl bg-gradient-to-br from-white/10 to-white/0 border border-white/10 shadow-[0_0_30px_-12px_rgba(103,232,249,0.2)] group overflow-hidden"
+              className="relative p-1 rounded-2xl bg-linear-to-br from-white/10 to-white/0 border border-white/10 shadow-[0_0_30px_-12px_rgba(103,232,249,0.2)] group overflow-hidden"
             >
               <div className="absolute inset-0 bg-white/5 backdrop-blur-xl rounded-2xl" />
               <motion.div
                 whileHover={{ scale: 1.02, rotateX: 2, rotateY: -2 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="relative z-10 h-[300px] md:h-[350px] lg:h-[400px] w-full rounded-xl overflow-hidden border border-white/10 bg-black/50 flex items-center justify-center p-5"
+                className="relative z-10 h-75 md:h-87.5 lg:h-100 w-full rounded-xl overflow-hidden border border-white/10 bg-black/50 flex items-center justify-center p-5"
                 style={{ perspective: 1000 }}
               >
                 {/* Glow behind image */}
@@ -177,7 +177,7 @@ export default function Credentials() {
                     className="flex flex-col"
                   >
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center border border-cyan-500/30 text-cyan-400 text-lg shadow-[0_0_15px_rgba(34,211,238,0.2)]">
+                      <div className="w-10 h-10 rounded-xl bg-linear-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center border border-cyan-500/30 text-cyan-400 text-lg shadow-[0_0_15px_rgba(34,211,238,0.2)]">
                         <FiAward />
                       </div>
                       <div>
@@ -217,7 +217,7 @@ export default function Credentials() {
                       rel="noreferrer"
                       className="group relative inline-flex items-center justify-center gap-2 w-full py-3 px-5 rounded-xl font-bold text-white overflow-hidden bg-white/5 border border-white/10 transition-all hover:border-cyan-400/50 hover:shadow-[0_0_20px_-5px_rgba(103,232,249,0.4)] hover:text-cyan-300"
                     >
-                      <span className="absolute inset-0 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      <span className="absolute inset-0 bg-linear-to-r from-cyan-600/20 to-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                       <span className="relative z-10 flex items-center gap-2">
                         View Certificate{" "}
                         <FiExternalLink className="text-lg group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -283,7 +283,7 @@ export default function Credentials() {
                     className="relative pl-8 group/edu"
                   >
                     <span className="absolute left-0 top-1.5 h-3 w-3 rounded-full border-2 border-cyan-400 bg-black shadow-[0_0_10px_rgba(34,211,238,0.5)] group-hover/edu:bg-cyan-400 transition-colors duration-300" />
-                    <span className="absolute left-[5px] top-6 h-[calc(100%-8px)] w-[2px] bg-gradient-to-b from-cyan-400/50 to-transparent" />
+                    <span className="absolute left-1.25 top-6 h-[calc(100%-8px)] w-0.5 bg-linear-to-b from-cyan-400/50 to-transparent" />
 
                     <div className="bg-white/5 border border-white/5 hover:border-white/10 rounded-xl p-4 transition-all duration-300 hover:bg-white/10">
                       <p className="text-sm font-bold text-cyan-50 mb-1">

@@ -27,7 +27,7 @@ export default function DraggableCardDemo() {
           key={idx}
           className={cardPositions[idx % cardPositions.length]}
         >
-          <div className="relative overflow-hidden rounded-[2rem] bg-white p-6 shadow-2xl dark:bg-[#0B0F19] border border-neutral-200 dark:border-white/10 w-64 sm:w-[22rem] flex flex-col gap-4 group hover:border-white/20 transition-colors">
+          <div className="relative overflow-hidden rounded-4xl bg-white p-6 shadow-2xl dark:bg-[#0B0F19] border border-neutral-200 dark:border-white/10 w-64 sm:w-88 flex flex-col gap-4 group hover:border-white/20 transition-colors">
             {/* Ambient Background Glow */}
             <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-cyan-400/10 blur-[50px] transition-all group-hover:bg-cyan-400/20" />
             <div className="absolute -bottom-10 -left-10 h-32 w-32 rounded-full bg-purple/10 blur-[50px] transition-all group-hover:bg-purple/20" />

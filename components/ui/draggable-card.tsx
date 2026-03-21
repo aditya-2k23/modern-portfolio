@@ -165,7 +165,7 @@ export const DraggableCardBody = ({
         style={{
           opacity: glareOpacity,
         }}
-        className="pointer-events-none absolute inset-0 rounded-[2rem] bg-white mix-blend-overlay shadow-inner z-20"
+        className="pointer-events-none absolute inset-0 rounded-4xl bg-white mix-blend-overlay shadow-inner z-20"
       />
     </motion.div>
   );
@@ -179,6 +179,6 @@ export const DraggableCardContainer = ({
   children?: React.ReactNode;
 }) => {
   return (
-    <div className={cn("[perspective:3000px]", className)}>{children}</div>
+    <div className={cn("perspective-[3000px]", className)}>{children}</div>
   );
 };

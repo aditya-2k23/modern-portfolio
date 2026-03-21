@@ -25,7 +25,7 @@ export default function Home() {
 
       <HeroAbout />
 
-      <div className="mx-auto w-full max-w-[85rem] px-4 pb-8 sm:px-6 lg:px-8 space-y-24">
+      <div className="mx-auto w-full max-w-340 px-4 pb-8 sm:px-6 lg:px-8 space-y-24">
         <TechnicalArsenal />
         <FeaturedProjects />
         <Training />
