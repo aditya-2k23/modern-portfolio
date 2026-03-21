@@ -5,6 +5,7 @@ import { ThemeProvider } from "./provider";
 import { cn } from "@/lib/utils";
 
 import { SplashScreen } from "@/components/ui/splash-screen";
+import { SocialLinks } from "@/components/ui/SocialLinks";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -62,6 +63,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <SplashScreen />
+          <SocialLinks />
           {children}
         </ThemeProvider>
       </body>
