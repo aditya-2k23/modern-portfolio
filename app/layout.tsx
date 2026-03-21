@@ -4,7 +4,9 @@ import "./globals.css";
 import { ThemeProvider } from "./provider";
 import { cn } from "@/lib/utils";
 
-const inter = Inter({subsets:['latin'],variable:'--font-sans'});
+import { SplashScreen } from "@/components/ui/splash-screen";
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -55,6 +57,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <SplashScreen />
           {children}
         </ThemeProvider>
       </body>

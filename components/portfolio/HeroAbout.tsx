@@ -36,7 +36,7 @@ export default function HeroAbout() {
             <motion.p
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 2, duration: 0.8 }}
+              transition={{ delay: 2.5, duration: 0.8 }}
               className="text-center lg:text-left text-xs font-semibold uppercase tracking-[0.3em] text-cyan-300/75"
             >
               {heroData.eyebrow}
@@ -46,13 +46,14 @@ export default function HeroAbout() {
               <TextGenerateEffect
                 words={heroData.heading}
                 className="mt-4 text-balance text-3xl font-black leading-none text-white sm:text-4xl md:text-5xl lg:text-left"
+                delay={2.6}
               />
             </div>
 
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 2.2, duration: 0.8 }}
+              transition={{ delay: 2.8, duration: 0.8 }}
               className="w-full"
             >
               <p className="mt-4 text-center lg:text-left text-base leading-relaxed text-slate-300 md:text-lg max-w-2xl mx-auto lg:mx-0">
@@ -87,8 +88,8 @@ export default function HeroAbout() {
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 1.8, duration: 0.8 }}
-              className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-[430px] lg:h-[430px] overflow-hidden rounded-full border-4 border-cyan-400/20 shadow-[0_0_60px_-15px_rgba(34,211,238,0.4)] bg-slate-800/50 flex items-center justify-center flex-shrink-0"
+              transition={{ delay: 2.5, duration: 0.8 }}
+              className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-107.5 lg:h-107.5 overflow-hidden rounded-full border-4 border-cyan-400/20 shadow-[0_0_60px_-15px_rgba(34,211,238,0.4)] bg-slate-800/50 flex items-center justify-center shrink-0"
             >
               <img
                 src="/me.png"
@@ -103,14 +104,14 @@ export default function HeroAbout() {
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 2.4, duration: 0.8 }}
+          transition={{ delay: 3.0, duration: 0.8 }}
           className="mt-10 sm:mt-14 w-full"
         >
           <div className="flex flex-wrap gap-4 w-full max-w-4xl mx-auto lg:mx-0">
             {heroData.quickFacts.map((fact) => (
               <article
                 key={fact.label}
-                className="flex-1 min-w-[140px] rounded-2xl border border-white/10 bg-gradient-to-b from-white/5 to-transparent p-5 backdrop-blur hover:border-cyan-400/30 transition-colors"
+                className="flex-1 min-w-35 rounded-2xl border border-white/10 bg-linear-to-b from-white/5 to-transparent p-5 backdrop-blur hover:border-cyan-400/30 transition-colors"
               >
                 <p className="text-xs uppercase tracking-[0.22em] text-cyan-500 font-semibold">
                   {fact.label}
