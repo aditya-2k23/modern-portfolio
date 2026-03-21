@@ -1,9 +1,49 @@
 "use client";
 
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { heroData } from "@/data/index";
 import { Spotlight } from "@/components/ui/Spotlight";
 import { TextGenerateEffect } from "@/components/ui/TextGenerateEffect";
+import { cn } from "@/utils/cn";
+
+const FactCard = ({ label, value }: { label: string; value: string }) => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isHovering, setIsHovering] = useState(false);
+
+  const handleMouseMove = (event: React.MouseEvent<HTMLElement>) => {
+    const { clientX, clientY } = event;
+    const rect = event.currentTarget.getBoundingClientRect();
+    const x = (clientX - (rect.left + rect.width / 2)) / 20;
+    const y = (clientY - (rect.top + rect.height / 2)) / 20;
+    setMousePosition({ x, y });
+  };
+
+  return (
+    <motion.article
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => {
+        setIsHovering(false);
+        setMousePosition({ x: 0, y: 0 });
+      }}
+      style={{
+        transform: isHovering
+          ? `translate3d(${mousePosition.x}px, ${mousePosition.y}px, 0) scale3d(1.05, 1.05, 1)`
+          : "translate3d(0px, 0px, 0) scale3d(1, 1, 1)",
+        transition: "transform 0.1s ease-out",
+      }}
+      className="flex-1 min-w-35 rounded-2xl border border-white/10 bg-linear-to-b from-white/5 to-transparent p-5 backdrop-blur hover:border-cyan-400/30 transition-colors"
+    >
+      <p className="text-xs uppercase tracking-[0.22em] text-cyan-500 font-semibold">
+        {label}
+      </p>
+      <p className="mt-2 text-sm font-medium leading-relaxed text-white/90">
+        {value}
+      </p>
+    </motion.article>
+  );
+};
 
 export default function HeroAbout() {
   return (
@@ -109,17 +149,11 @@ export default function HeroAbout() {
         >
           <div className="flex flex-wrap gap-4 w-full max-w-4xl mx-auto lg:mx-0">
             {heroData.quickFacts.map((fact) => (
-              <article
+              <FactCard
                 key={fact.label}
-                className="flex-1 min-w-35 rounded-2xl border border-white/10 bg-linear-to-b from-white/5 to-transparent p-5 backdrop-blur hover:border-cyan-400/30 transition-colors"
-              >
-                <p className="text-xs uppercase tracking-[0.22em] text-cyan-500 font-semibold">
-                  {fact.label}
-                </p>
-                <p className="mt-2 text-sm font-medium leading-relaxed text-white/90">
-                  {fact.value}
-                </p>
-              </article>
+                label={fact.label}
+                value={fact.value}
+              />
             ))}
           </div>
         </motion.div>
