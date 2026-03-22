@@ -6,6 +6,7 @@ import {
   SiNextdotjs,
   SiReact,
   SiTailwindcss,
+  SiGreensock,
   SiFramer,
   SiNodedotjs,
   SiExpress,
@@ -19,10 +20,23 @@ import {
   SiVercel,
   SiJupyter,
   SiOpenai,
+  SiShadcnui,
+  SiPandas,
+  SiNumpy,
+  SiScikitlearn,
+  SiMicrosoftexcel,
+  SiPowerbi,
+  SiTensorflow,
 } from "react-icons/si";
-import { FaDatabase, FaLock, FaBrain, FaNetworkWired } from "react-icons/fa";
+import {
+  FaDatabase,
+  FaLock,
+  FaBrain,
+  FaNetworkWired,
+  FaChartLine,
+  FaChartBar,
+} from "react-icons/fa";
 import { TbApi } from "react-icons/tb";
-import { MdOutlineSecurity } from "react-icons/md";
 
 export const siteConfig = {
   name: "Aditya",
@@ -52,7 +66,7 @@ export const heroData = {
     { label: "Contact Me", href: "#contact" },
   ],
   quickFacts: [
-    { label: "Location", value: "Punjab, India" },
+    { label: "Location", value: "Jalandhar, Punjab, India" },
     {
       label: "Degree",
       value: "B.Tech Computer Science and Engineering",
@@ -66,59 +80,87 @@ export const skillCategories = [
   {
     category: "Programming Languages",
     skills: [
-      { name: "TypeScript", icon: SiTypescript },
-      { name: "JavaScript", icon: SiJavascript },
-      { name: "Python", icon: SiPython },
-      { name: "C++", icon: SiCplusplus },
-      { name: "SQL", icon: FaDatabase },
+      { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+      { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
+      { name: "Python", icon: SiPython, color: "#FFD43B" },
+      { name: "C++", icon: SiCplusplus, color: "#00599C" },
+      { name: "SQL", icon: FaDatabase, color: "#4479A1" },
     ],
   },
   {
     category: "Frontend",
     skills: [
       { name: "Next.js", icon: SiNextdotjs, featured: true },
-      { name: "React", icon: SiReact, featured: true },
-      { name: "Tailwind CSS", icon: SiTailwindcss },
-      { name: "Framer Motion", icon: SiFramer },
-      { name: "Shadcn/UI", icon: SiReact },
+      { name: "React", icon: SiReact, featured: true, color: "#61DAFB" },
+      { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
+      { name: "GSAP", icon: SiGreensock, color: "#88CE02" },
+      { name: "Framer Motion", icon: SiFramer, color: "#0055FF" },
+      { name: "Shadcn/UI", icon: SiShadcnui },
     ],
   },
   {
     category: "Backend",
     skills: [
-      { name: "Node.js", icon: SiNodedotjs, featured: true },
+      { name: "Node.js", icon: SiNodedotjs, featured: true, color: "#339933" },
       { name: "Express.js", icon: SiExpress },
-      { name: "REST APIs", icon: TbApi },
-      { name: "Authentication", icon: FaLock },
+      { name: "REST APIs", icon: TbApi, color: "#0096D6" },
+      { name: "Authentication", icon: FaLock, color: "#F05032" },
     ],
   },
   {
     category: "Databases",
     skills: [
-      { name: "MongoDB", icon: SiMongodb, featured: true },
-      { name: "PostgreSQL", icon: SiPostgresql },
-      { name: "Redis", icon: SiRedis },
-      { name: "Firebase", icon: SiFirebase },
+      { name: "MongoDB", icon: SiMongodb, featured: true, color: "#47A248" },
+      { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
+      { name: "Redis", icon: SiRedis, color: "#DC382D" },
+      { name: "Firebase", icon: SiFirebase, color: "#FFCA28" },
     ],
   },
   {
     category: "DevOps & Tools",
     skills: [
-      { name: "Docker", icon: SiDocker, featured: true },
-      { name: "CI/CD", icon: SiGithubactions, featured: true },
-      { name: "GitHub Actions", icon: SiGithubactions },
-      { name: "Linux", icon: SiLinux },
+      { name: "Docker", icon: SiDocker, featured: true, color: "#2496ED" },
+      {
+        name: "CI/CD",
+        icon: SiGithubactions,
+        featured: true,
+        color: "#2088FF",
+      },
+      { name: "GitHub Actions", icon: SiGithubactions, color: "#2088FF" },
+      { name: "Linux", icon: SiLinux, color: "#FCC624" },
       { name: "Vercel", icon: SiVercel },
     ],
   },
   {
-    category: "AI / Data Science",
+    category: "AI/ML Integration",
     skills: [
-      { name: "AI APIs", icon: FaBrain, featured: true },
-      { name: "RAG", icon: FaNetworkWired },
-      { name: "Prompt Engineering", icon: SiOpenai },
-      { name: "Vector Databases", icon: FaDatabase },
-      { name: "Jupyter", icon: SiJupyter },
+      { name: "AI APIs", icon: FaBrain, featured: true, color: "#10A37F" },
+      {
+        name: "Prompt Engineering",
+        icon: SiOpenai,
+        featured: true,
+        color: "#FFFFFF",
+      },
+      {
+        name: "TensorFlow",
+        icon: SiTensorflow,
+        color: "#FF6F00",
+      },
+      { name: "Scikit-Learn", icon: SiScikitlearn, color: "#F7931E" },
+      { name: "RAG", icon: FaNetworkWired, color: "#4479A1" },
+      { name: "Vector Databases", icon: FaDatabase, color: "#00D6B1" },
+    ],
+  },
+  {
+    category: "Data Science",
+    skills: [
+      { name: "Pandas", icon: SiPandas, featured: true, color: "#150458" },
+      { name: "NumPy", icon: SiNumpy, color: "#4DABCF" },
+      { name: "Matplotlib", icon: FaChartLine, color: "#11557c" },
+      { name: "Seaborn", icon: FaChartBar, color: "#4c72B0" },
+      { name: "Jupyter", icon: SiJupyter, color: "#F37626" },
+      { name: "Power BI", icon: SiPowerbi, color: "#F2C811" },
+      { name: "MS Excel", icon: SiMicrosoftexcel, color: "#217346" },
     ],
   },
 ];
@@ -127,7 +169,7 @@ export const featuredProjects = [
   {
     id: "moody",
     title: "Moody",
-    image: "/p1.svg",
+    image: "/moody.png",
     description:
       "AI-assisted mood tracking experience with rich emotional insights, trend visualization, and behavior analytics.",
     techStack: ["Next.js", "React", "Firebase", "Redis", "Docker"],
@@ -145,7 +187,7 @@ export const featuredProjects = [
   {
     id: "livedocs",
     title: "LiveDocs",
-    image: "/p2.svg",
+    image: "/livedocs.png",
     description:
       "Collaborative markdown workspace engineered for real-time editing, role-based collaboration, and team productivity.",
     techStack: ["Next.js", "React", "TypeScript", "Liveblocks", "Clerk"],
@@ -157,13 +199,13 @@ export const featuredProjects = [
     ],
     outcome:
       "Reduced content bottlenecks for teams by enabling instant collaborative editing.",
-    liveUrl: "livedocs-adi.vercel.app",
+    liveUrl: "https://livedocs-14leiajkd-aditya-2k23s-projects.vercel.app/",
     sourceUrl: "https://github.com/aditya-2k23/livedocs",
   },
   {
     id: "store-it",
     title: "Store It",
-    image: "/p3.svg",
+    image: "/store-it.png",
     description:
       "Secure cloud file hub with search, sharing, and optimized storage workflows for modern web teams.",
     techStack: ["Next.js", "TypeScript", "Appwrite", "Tailwind CSS", "Vercel"],
@@ -175,7 +217,7 @@ export const featuredProjects = [
     ],
     outcome:
       "Improved file discovery and sharing speed for project collaborators.",
-    liveUrl: "store-it-adi.vercel.app",
+    liveUrl: "https://store-it-adi.vercel.app",
     sourceUrl: "https://github.com/aditya-2k23/store-it",
   },
 ];
