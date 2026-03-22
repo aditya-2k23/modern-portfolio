@@ -27,6 +27,11 @@ import {
   SiMicrosoftexcel,
   SiPowerbi,
   SiTensorflow,
+  SiThreedotjs,
+  SiFigma,
+  SiSupabase,
+  SiAppwrite,
+  SiGooglegemini,
 } from "react-icons/si";
 import {
   FaDatabase,
@@ -48,10 +53,11 @@ export const siteConfig = {
 };
 
 export const navItems = [
-  { name: "About", link: "#about" },
   { name: "Arsenal", link: "#arsenal" },
   { name: "Projects", link: "#projects" },
   { name: "Credentials", link: "#credentials" },
+  { name: "Co-Curricular", link: "#co-curricular" },
+  { name: "Training", link: "#training" },
   { name: "Contact", link: "#contact" },
 ];
 
@@ -96,6 +102,8 @@ export const skillCategories = [
       { name: "GSAP", icon: SiGreensock, color: "#88CE02" },
       { name: "Framer Motion", icon: SiFramer, color: "#0055FF" },
       { name: "Shadcn/UI", icon: SiShadcnui },
+      { name: "Three.js", icon: SiThreedotjs, color: "#ffffff" },
+      { name: "Figma", icon: SiFigma, color: "#F24E1E" },
     ],
   },
   {
@@ -114,6 +122,8 @@ export const skillCategories = [
       { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
       { name: "Redis", icon: SiRedis, color: "#DC382D" },
       { name: "Firebase", icon: SiFirebase, color: "#FFCA28" },
+      { name: "Supabase", icon: SiSupabase, color: "#3ECF8E" },
+      { name: "Appwrite", icon: SiAppwrite, color: "#F23131" },
     ],
   },
   {
@@ -185,24 +195,6 @@ export const featuredProjects = [
     sourceUrl: "https://github.com/aditya-2k23/moody",
   },
   {
-    id: "livedocs",
-    title: "LiveDocs",
-    image: "/livedocs.png",
-    description:
-      "Collaborative markdown workspace engineered for real-time editing, role-based collaboration, and team productivity.",
-    techStack: ["Next.js", "React", "TypeScript", "Liveblocks", "Clerk"],
-    features: [
-      "Real-time multi-user collaboration",
-      "Threaded comments and mentions",
-      "Role-based access control",
-      "Consistent editor performance under activity",
-    ],
-    outcome:
-      "Reduced content bottlenecks for teams by enabling instant collaborative editing.",
-    liveUrl: "https://livedocs-14leiajkd-aditya-2k23s-projects.vercel.app/",
-    sourceUrl: "https://github.com/aditya-2k23/livedocs",
-  },
-  {
     id: "store-it",
     title: "Store It",
     image: "/store-it.png",
@@ -219,6 +211,24 @@ export const featuredProjects = [
       "Improved file discovery and sharing speed for project collaborators.",
     liveUrl: "https://store-it-adi.vercel.app",
     sourceUrl: "https://github.com/aditya-2k23/store-it",
+  },
+  {
+    id: "livedocs",
+    title: "LiveDocs",
+    image: "/livedocs.png",
+    description:
+      "Collaborative markdown workspace engineered for real-time editing, role-based collaboration, and team productivity.",
+    techStack: ["Next.js", "React", "TypeScript", "Liveblocks", "Clerk"],
+    features: [
+      "Real-time multi-user collaboration",
+      "Threaded comments and mentions",
+      "Role-based access control",
+      "Consistent editor performance under activity",
+    ],
+    outcome:
+      "Reduced content bottlenecks for teams by enabling instant collaborative editing.",
+    liveUrl: "https://livedocs-14leiajkd-aditya-2k23s-projects.vercel.app/",
+    sourceUrl: "https://github.com/aditya-2k23/livedocs",
   },
 ];
 
@@ -288,3 +298,133 @@ export const contactData = {
   linkedin: "https://linkedin.com/in/aditya-2k23",
   phone: "+91-6284219106",
 };
+
+export const trainingData = {
+  title: "MERN Full Stack Developer",
+  company: "Gokboru Tech Pvt. Ltd",
+  date: "Jun' 25",
+  certificateLink: "#",
+  bullets: [
+    "Completed a six-week industrial training program focused on full-stack web development using modern frameworks like React, NextJS, TailwindCSS and best practices with Git & GitHub.",
+    "Gained practical experience in building dynamic UIs, developing secure RESTful APIs, and integrating databases using Firebase for end-to-end application development.",
+    "Learned deployment workflows, authentication, basic CI/CD setups for production applications.",
+  ],
+  techStack: [
+    { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
+    { name: "React.js", icon: SiReact, color: "#61DAFB" },
+    { name: "Next.js", icon: SiNextdotjs },
+    { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
+    { name: "Express.js", icon: SiExpress },
+    { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+    { name: "Gemini", icon: SiGooglegemini, color: "#4285F4" },
+    { name: "Vercel", icon: SiVercel },
+  ],
+};
+
+export const certificatesData = [
+  {
+    id: 1,
+    title: "Google I/O Jalandhar",
+    issuer: "Google Developer Groups Jalandhar",
+    date: "Aug 2024",
+    description:
+      "This event was a local Google I/O Extended 2024 meetup in Jalandhar, focused on updates to Google technologies (Android, Web, Cloud, AI, etc.) and community networking for developers.",
+    tags: ["#GDG", "#GoogleIO2024", "#AI", "#GoogleCloud", "#GoogleUpdates"],
+  },
+  {
+    id: 2,
+    title: "AWS Student Community Day Workshop",
+    issuer: "AWS Cloud Clubs",
+    date: "Nov 2025",
+    description:
+      "Participated in a hands-on workshop at the AWS Student Community Day in Jalandhar. The event provided practical exposure to Amazon Web Services (AWS) fundamentals and modern cloud computing concepts.",
+    tags: ["#AWS", "#CloudComputing", "#CloudInfrastructure", "#Architecture"],
+  },
+  {
+    id: 3,
+    title: "TECH-A-ZON: A Session on Git and GitHub",
+    issuer: "Changemakers of Amazon Club",
+    date: "Not Specified",
+    description:
+      "Participated in 'TECH-A-ZON', a dedicated session focused on Git and GitHub organized by the Changemakers of Amazon Club. Acquired practical knowledge in version control systems, efficient repository management, and collaborative software development workflows.",
+    tags: ["#Git", "#GitHub", "#VersionControl", "#SoftwareDevelopment"],
+  },
+  {
+    id: 4,
+    title: "Code Off Duty - Web Hackathon",
+    issuer: "Coding Wise",
+    date: "Mar 2024",
+    description:
+      "Participated in an intensive two-day web hackathon. Collaborated under a tight deadline to develop innovative web solutions, demonstrating strong problem-solving skills, creativity, and effective teamwork.",
+    tags: ["#Hackathon", "#WebDevelopment", "#ProblemSolving", "#Teamwork"],
+  },
+  {
+    id: 5,
+    title: "CODE STORM 36-Hour Hackathon",
+    issuer: "Microsoft Learn Student Ambassadors & Spirit Organisation",
+    date: "Aug 2024",
+    description:
+      "Participated in the CODE STORM hackathon, engaging in 36 hours of intensive, non-stop coding. Demonstrated rapid problem-solving, creativity, and innovation to build tech solutions under pressure.",
+    tags: ["#Hackathon", "#MicrosoftLearn", "#Innovation", "#Coding"],
+  },
+  {
+    id: 6,
+    title: "Google AI Essentials",
+    issuer: "Google (via Coursera)",
+    date: "Jul 2024",
+    description:
+      "Successfully completed the Google AI Essentials course. Acquired fundamental knowledge in artificial intelligence and learned how to practically apply generative AI tools to enhance productivity and streamline workflows.",
+    tags: [
+      "#ArtificialIntelligence",
+      "#GenerativeAI",
+      "#Google",
+      "#Productivity",
+    ],
+  },
+  {
+    id: 7,
+    title: "Dark Code Derby",
+    issuer: "Capgemini Students Club 'Techgem Sphere'",
+    date: "Apr 2024",
+    description:
+      "An intensive competitive coding event. Applied strong knowledge of data structures and algorithms using only python to solve complex challenges under time constraints, further sharpening my competitive programming skills.",
+    tags: [
+      "#CompetitiveCoding",
+      "#DataStructures",
+      "#Algorithms",
+      "#ProblemSolving",
+    ],
+  },
+  {
+    id: 8,
+    title: "Google AI Essentials",
+    issuer: "Google (via Coursera)",
+    date: "Jul 2024",
+    description:
+      "Earned the Google AI Essentials certification, demonstrating a foundational understanding of artificial intelligence. Gained practical experience in utilizing generative AI tools to streamline workflows, improve efficiency, and enhance overall productivity.",
+    tags: [
+      "#ArtificialIntelligence",
+      "#GenerativeAI",
+      "#Google",
+      "#Productivity",
+    ],
+  },
+  {
+    id: 9,
+    title: "Hackatron Finalist - Infotsav'25",
+    issuer: "ABV-IIITM Gwalior",
+    date: "Oct 2025",
+    description:
+      "Achieved a finalist position at the Infotsav'25 Hackatron with team 'PSUEDOCODERS'. Recognized for demonstrating strong technical skills, perseverance, and remarkable performance during the competitive hackathon.",
+    tags: ["#Hackathon", "#Infotsav25", "#Finalist", "#Teamwork"],
+  },
+  {
+    id: 10,
+    title: "JavaScript Algorithms and Data Structures (Beta)",
+    issuer: "freeCodeCamp",
+    date: "Aug 2024",
+    description:
+      "Successfully completed a rigorous 300-hour developer certification focused on JavaScript. Mastered core programming fundamentals, algorithmic thinking, and efficient data handling techniques.",
+    tags: ["#JavaScript", "#DataStructures", "#Algorithms", "#freeCodeCamp"],
+  },
+];
