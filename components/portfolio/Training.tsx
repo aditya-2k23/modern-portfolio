@@ -19,7 +19,7 @@ export default function Training() {
   const trainingData = {
     title: "MERN Full Stack Developer",
     company: "Gokboru Tech Pvt. Ltd",
-    date: "Jun’ 25",
+    date: "Jun' 25",
     certificateLink: "#",
     bullets: [
       "Completed a six-week industrial training program focused on full-stack web development using modern frameworks like React, NextJS, TailwindCSS and best practices with Git & GitHub.",
@@ -27,13 +27,13 @@ export default function Training() {
       "Learned deployment workflows, authentication, basic CI/CD setups for production applications.",
     ],
     techStack: [
-      { name: "JavaScript", icon: SiJavascript },
-      { name: "React.js", icon: SiReact },
+      { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
+      { name: "React.js", icon: SiReact, color: "#61DAFB" },
       { name: "Next.js", icon: SiNextdotjs },
-      { name: "Node.js", icon: SiNodedotjs },
+      { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
       { name: "Express.js", icon: SiExpress },
-      { name: "MongoDB", icon: SiMongodb },
-      { name: "Gemini", icon: SiGooglegemini },
+      { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+      { name: "Gemini", icon: SiGooglegemini, color: "#4285F4" },
       { name: "Vercel", icon: SiVercel },
     ],
   };
@@ -87,7 +87,7 @@ export default function Training() {
             <ul className="space-y-4 text-slate-300">
               {trainingData.bullets.map((bullet, idx) => (
                 <li key={idx} className="flex gap-3">
-                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-400" />
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-purple" />
                   <span className="leading-relaxed text-sm md:text-base">
                     {bullet}
                   </span>
@@ -104,9 +104,12 @@ export default function Training() {
               {trainingData.techStack.map((tech) => (
                 <div
                   key={tech.name}
-                  className="flex items-center gap-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 px-4 py-2 text-xs font-semibold text-cyan-400 shadow-sm"
+                  className="flex items-center gap-2 rounded-full bg-white/5 border border-white/10 px-4 py-2 text-xs font-semibold text-slate-300 shadow-sm transition-colors hover:bg-white/10"
                 >
-                  <tech.icon className="h-4 w-4" />
+                  <tech.icon
+                    className="h-4 w-4"
+                    style={{ color: tech.color || "currentColor" }}
+                  />
                   <span>{tech.name}</span>
                 </div>
               ))}

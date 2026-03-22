@@ -110,7 +110,7 @@ export default function HeroAbout() {
             <div className="w-full text-center lg:text-left">
               <TextGenerateEffect
                 words={heroData.heading}
-                className="mt-4 text-balance text-3xl font-black leading-none text-white sm:text-4xl md:text-5xl lg:text-left"
+                className="mt-4 text-balance text-3xl text-white sm:text-4xl md:text-5xl lg:text-left"
                 delay={2.6}
               />
             </div>
@@ -174,7 +174,7 @@ export default function HeroAbout() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 2.5, duration: 0.8 }}
-              className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-107.5 lg:h-107.5 overflow-hidden rounded-full border-4 border-cyan-400/20 shadow-[0_0_60px_-15px_rgba(34,211,238,0.4)] bg-slate-800/50 flex items-center justify-center shrink-0"
+              className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 overflow-hidden rounded-full border-4 border-cyan-400/20 shadow-[0_0_60px_-15px_rgba(34,211,238,0.4)] bg-slate-800/50 flex items-center justify-center shrink-0"
             >
               <Image
                 src="/me.png"
@@ -182,7 +182,7 @@ export default function HeroAbout() {
                 fill
                 priority
                 sizes="(max-width: 768px) 70vw, (max-width: 1200px) 40vw, 430px"
-                className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
               />
             </motion.div>
           </div>
@@ -193,7 +193,7 @@ export default function HeroAbout() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 3.0, duration: 0.8 }}
-          className="mt-10 sm:mt-14 w-full"
+          className="mt-8 sm:mt-10 w-full"
         >
           <div className="flex flex-wrap gap-4 w-full max-w-4xl mx-auto lg:mx-0">
             {heroData.quickFacts.map((fact) => (

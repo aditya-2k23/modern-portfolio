@@ -48,7 +48,7 @@ export default function FeaturedProjects() {
                     alt={project.title}
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover transition duration-500 group-hover/card:scale-105"
+                    className="object-cover scale-95 rotate-2 rounded-xl transition duration-500 group-hover/card:scale-100 group-hover/card:rotate-0 group-hover/card:rounded-none"
                   />
                 </CardItem>
 
