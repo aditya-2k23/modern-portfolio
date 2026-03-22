@@ -10,6 +10,9 @@ const TechnicalArsenal = dynamic(
 const FeaturedProjects = dynamic(
   () => import("@/components/portfolio/FeaturedProjects"),
 );
+const CoCurricularActivities = dynamic(
+  () => import("@/components/portfolio/CoCurricularActivities"),
+);
 const Credentials = dynamic(() => import("@/components/portfolio/Credentials"));
 const Training = dynamic(() => import("@/components/portfolio/Training"));
 const ContactSection = dynamic(
@@ -30,6 +33,7 @@ export default function Home() {
         <FeaturedProjects />
         <Training />
         <Credentials />
+        <CoCurricularActivities />
         <ContactSection />
       </div>
 
