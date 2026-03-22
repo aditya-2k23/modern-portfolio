@@ -4,7 +4,6 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { credentialsData } from "@/data/index";
 import SectionHeading from "./SectionHeading";
-import { DottedGlowBackground } from "@/components/ui/dotted-glow-background";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import {
   FiCheckCircle,
@@ -156,17 +155,6 @@ export default function Credentials() {
               viewport={{ once: true, amount: 0.2 }}
               className="relative p-7 rounded-2xl border border-white/10 bg-black/40 backdrop-blur-xl shadow-2xl flex flex-col"
             >
-              <DottedGlowBackground
-                className="pointer-events-none mask-radial-to-90% mask-radial-at-center opacity-20"
-                opacity={1}
-                gap={15}
-                radius={2}
-                color="rgba(103,232,249,0.2)"
-                glowColor="rgba(103,232,249,0.8)"
-                backgroundOpacity={0}
-                speedMin={0.5}
-                speedMax={2}
-              />
               <div className="relative z-10">
                 <AnimatePresence mode="wait">
                   <motion.div
@@ -242,17 +230,6 @@ export default function Credentials() {
             viewport={{ once: true, amount: 0.3 }}
             className="relative overflow-hidden rounded-3xl border border-white/10 bg-black/40 p-8 shadow-2xl backdrop-blur-xl group"
           >
-            <DottedGlowBackground
-              className="pointer-events-none mask-radial-to-90% mask-radial-at-center opacity-15 group-hover:opacity-20 transition-opacity duration-500"
-              opacity={1}
-              gap={10}
-              radius={2}
-              color="rgba(103,232,249,0.3)"
-              glowColor="rgba(103,232,249,1)"
-              backgroundOpacity={0}
-              speedMin={0.3}
-              speedMax={1.6}
-            />
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-8">
                 <div className="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center border border-blue-500/20 text-blue-400">
@@ -316,17 +293,6 @@ export default function Credentials() {
             transition={{ delay: 0.2 }}
             className="relative overflow-hidden rounded-3xl border border-white/10 bg-black/40 p-8 shadow-2xl backdrop-blur-xl group"
           >
-            <DottedGlowBackground
-              className="pointer-events-none mask-radial-to-90% mask-radial-at-center opacity-15 group-hover:opacity-20 transition-opacity duration-500"
-              opacity={1}
-              gap={10}
-              radius={2}
-              color="rgba(103,232,249,0.3)"
-              glowColor="rgba(103,232,249,1)"
-              backgroundOpacity={0}
-              speedMin={0.3}
-              speedMax={1.6}
-            />
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-8">
                 <div className="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20 text-emerald-400">

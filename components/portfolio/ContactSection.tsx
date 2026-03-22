@@ -5,7 +5,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { contactData } from "@/data/index";
 import { Mail, Linkedin, Github, Phone, Send } from "lucide-react";
-import { DottedGlowBackground } from "@/components/ui/dotted-glow-background";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import SectionHeading from "./SectionHeading";
 
@@ -113,18 +112,6 @@ export default function ContactSection() {
 
         <div className="mx-auto grid max-w-5xl gap-6 lg:grid-cols-2 lg:gap-8">
           <article className="relative overflow-hidden group flex flex-col justify-between rounded-4xl border border-white/10 bg-[#0B0F19] p-8 lg:p-10">
-            <DottedGlowBackground
-              className="pointer-events-none mask-radial-to-90% mask-radial-at-center opacity-25 group-hover:opacity-50 transition-opacity duration-500"
-              opacity={1}
-              gap={10}
-              radius={2}
-              color="rgba(103,232,249,0.3)"
-              glowColor="rgba(103,232,249,1)"
-              backgroundOpacity={0}
-              speedMin={0.3}
-              speedMax={1.6}
-              speedScale={1}
-            />
             <div className="relative z-10">
               {/* Desktop Badge */}
               <div className="hidden lg:inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-cyan-300">
@@ -220,18 +207,6 @@ export default function ContactSection() {
           </article>
 
           <article className="relative overflow-hidden group rounded-4xl border border-white/10 bg-[#0B0F19] p-6 lg:p-10">
-            <DottedGlowBackground
-              className="pointer-events-none mask-radial-to-90% mask-radial-at-center opacity-20 group-hover:opacity-40 transition-opacity duration-500"
-              opacity={1}
-              gap={10}
-              radius={2}
-              color="rgba(103,232,249,0.3)"
-              glowColor="rgba(103,232,249,1)"
-              backgroundOpacity={0}
-              speedMin={0.3}
-              speedMax={1.6}
-              speedScale={1}
-            />
             <div className="relative z-10">
               <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
                 <div className="flex flex-col gap-2 relative">
