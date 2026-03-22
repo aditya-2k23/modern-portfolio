@@ -4,6 +4,7 @@ import React, { memo, useCallback, useRef } from "react";
 import { motion } from "framer-motion";
 import { heroData } from "@/data/index";
 import { Spotlight } from "@/components/ui/Spotlight";
+import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import { TextGenerateEffect } from "@/components/ui/TextGenerateEffect";
 import Image from "next/image";
 
@@ -120,28 +121,48 @@ export default function HeroAbout() {
               transition={{ delay: 2.8, duration: 0.8 }}
               className="w-full"
             >
-              <p className="mt-4 text-center lg:text-left text-base leading-relaxed text-slate-300 md:text-lg max-w-2xl mx-auto lg:mx-0">
+              <p className="text-center lg:text-left text-base leading-relaxed text-slate-300 md:text-lg max-w-2xl mx-auto lg:mx-0">
                 {heroData.subheading}
               </p>
 
-              <div className="mt-9 flex flex-wrap items-center justify-center lg:justify-start gap-4">
+              <div className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-4">
                 {heroData.ctas.map((cta, index) => {
                   const primary = index === 0;
                   return (
-                    <a
+                    <HoverBorderGradient
                       key={cta.label}
+                      as="a"
                       href={cta.href}
                       target={cta.external ? "_blank" : undefined}
                       rel={cta.external ? "noreferrer" : undefined}
-                      className={[
-                        "rounded-full px-6 py-3 text-sm font-semibold transition duration-300",
+                      containerClassName={`group rounded-full ${
                         primary
-                          ? "bg-linear-to-r from-cyan-400 to-blue-500 text-black shadow-[0_10px_40px_-12px_rgba(56,189,248,0.8)] hover:scale-[1.02]"
-                          : "border border-white/20 bg-transparent text-white hover:border-cyan-300/80 hover:bg-white/10",
-                      ].join(" ")}
+                          ? "shadow-[0_0_40px_-10px_rgba(56,189,248,0.8)] hover:scale-[1.05] transition-transform duration-300"
+                          : ""
+                      }`}
+                      className={`px-5 py-2 sm:px-6 sm:py-2.5 text-sm font-semibold transition duration-300 rounded-full flex items-center justify-center gap-2 ${
+                        primary
+                          ? "bg-linear-to-r from-cyan-600 via-blue-500 to-blue-600 text-white"
+                          : "bg-[#0f172a]/80 text-slate-200 hover:text-cyan-300"
+                      }`}
                     >
                       {cta.label}
-                    </a>
+                      {primary && (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="w-4 h-4 ml-0.5 group-hover:translate-x-1 transition-transform"
+                        >
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                          <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                      )}
+                    </HoverBorderGradient>
                   );
                 })}
               </div>

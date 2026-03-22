@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { credentialsData } from "@/data/index";
 import SectionHeading from "./SectionHeading";
 import { DottedGlowBackground } from "@/components/ui/dotted-glow-background";
+import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import {
   FiCheckCircle,
   FiAward,
@@ -209,20 +210,22 @@ export default function Credentials() {
                       ))}
                     </div>
 
-                    <motion.a
-                      whileHover={{ scale: 1.03 }}
-                      whileTap={{ scale: 0.97 }}
-                      href={enhancedCertifications[activeCert].link}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="group relative inline-flex items-center justify-center gap-2 w-full py-3 px-5 rounded-xl font-bold text-white overflow-hidden bg-white/5 border border-white/10 transition-all hover:border-cyan-400/50 hover:shadow-[0_0_20px_-5px_rgba(103,232,249,0.4)] hover:text-cyan-300"
-                    >
-                      <span className="absolute inset-0 bg-linear-to-r from-cyan-600/20 to-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                      <span className="relative z-10 flex items-center gap-2">
-                        View Certificate{" "}
-                        <FiExternalLink className="text-lg group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                      </span>
-                    </motion.a>
+                    <div className="w-full">
+                      <HoverBorderGradient
+                        as="a"
+                        href={enhancedCertifications[activeCert].link}
+                        target="_blank"
+                        rel="noreferrer"
+                        containerClassName="w-full rounded-xl"
+                        className="group relative inline-flex items-center justify-center gap-2 w-full py-3 px-5 rounded-xl font-bold text-white overflow-hidden bg-black border-none transition-all hover:text-cyan-300"
+                      >
+                        <span className="absolute inset-0 bg-linear-to-r from-cyan-600/20 to-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <span className="relative z-10 flex items-center gap-2">
+                          View Certificate{" "}
+                          <FiExternalLink className="text-lg group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                        </span>
+                      </HoverBorderGradient>
+                    </div>
                   </motion.div>
                 </AnimatePresence>
               </div>

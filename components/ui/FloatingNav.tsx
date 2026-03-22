@@ -8,6 +8,7 @@ import {
 } from "framer-motion";
 import { cn } from "@/utils/cn";
 import Link from "next/link";
+import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 
 export const FloatingNav = ({
   navItems,
@@ -69,13 +70,15 @@ export const FloatingNav = ({
             <span className="text-sm cursor-pointer!">{navItem.name}</span>
           </Link>
         ))}
-        <a
+        <HoverBorderGradient
+          as="a"
           href="#"
-          className="border text-sm font-medium relative border-neutral-200 dark:border-white/20 text-black dark:text-white px-4 py-2 rounded-full"
+          containerClassName="rounded-full"
+          className="text-sm font-medium relative text-black dark:text-white px-4 py-2 rounded-full"
         >
           <span>Top</span>
           <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-linear-to-r from-transparent via-blue-500 to-transparent h-px" />
-        </a>
+        </HoverBorderGradient>
       </motion.div>
     </AnimatePresence>
   );

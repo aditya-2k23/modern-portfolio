@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import SectionHeading from "./SectionHeading";
 import { ExternalLink } from "lucide-react";
+import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import {
   SiJavascript,
   SiReact,
@@ -58,22 +59,24 @@ export default function Training() {
                 {trainingData.title}
               </h3>
               <p className="mt-1 flex items-center gap-2 text-slate-300 font-medium">
-                <span className="text-cyan-400">{trainingData.company}</span>
+                <span className="text-purple">{trainingData.company}</span>
               </p>
             </div>
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
-              <span className="rounded-full bg-cyan-500/10 border border-cyan-500/20 px-4 py-2 text-sm font-semibold text-cyan-300">
+              <span className="rounded-full bg-purple/10 border border-purple/20 px-4 py-2 text-sm font-semibold text-purple">
                 {trainingData.date}
               </span>
-              <a
+              <HoverBorderGradient
+                as="a"
                 href={trainingData.certificateLink}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition-colors px-4 py-2 text-sm font-semibold text-slate-200"
+                containerClassName="rounded-full"
+                className="flex items-center gap-2 rounded-full bg-black transition-colors px-4 py-2 text-sm font-semibold text-slate-200"
               >
                 <span>Certificate</span>
                 <ExternalLink className="h-4 w-4" />
-              </a>
+              </HoverBorderGradient>
             </div>
           </div>
 

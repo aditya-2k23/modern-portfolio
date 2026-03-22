@@ -6,6 +6,7 @@ import emailjs from "@emailjs/browser";
 import { contactData } from "@/data/index";
 import { Mail, Linkedin, Github, Phone, Send } from "lucide-react";
 import { DottedGlowBackground } from "@/components/ui/dotted-glow-background";
+import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 
 const emailServiceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
 const emailTemplateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
@@ -306,15 +307,18 @@ export default function ContactSection() {
                   />
                 </div>
 
-                <motion.button
-                  whileTap={{ scale: 0.98 }}
-                  disabled={isSubmitting}
-                  type="submit"
-                  className="mt-4 flex w-full lg:w-max lg:min-w-48 lg:ml-auto items-center justify-center gap-2 rounded-xl bg-[#228be6] lg:bg-linear-to-r lg:from-cyan-400 lg:to-blue-500 px-8 py-4 lg:py-3.5 text-[15px] font-bold text-white lg:text-slate-950 transition hover:opacity-90 disabled:opacity-70 shadow-[0_0_20px_rgba(34,139,230,0.4)]"
-                >
-                  <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
-                  <Send className="h-4 w-4" />
-                </motion.button>
+                <div className="mt-4 flex w-full lg:w-max lg:min-w-48 lg:ml-auto">
+                  <HoverBorderGradient
+                    containerClassName="rounded-xl w-full lg:w-max"
+                    className="flex w-full items-center justify-center gap-2 rounded-xl bg-black px-8 py-4 lg:py-3.5 text-[15px] font-bold text-white transition hover:opacity-90 disabled:opacity-70"
+                    as="button"
+                    type="submit"
+                    disabled={isSubmitting}
+                  >
+                    <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
+                    <Send className="h-4 w-4" />
+                  </HoverBorderGradient>
+                </div>
               </form>
             </div>
           </article>
