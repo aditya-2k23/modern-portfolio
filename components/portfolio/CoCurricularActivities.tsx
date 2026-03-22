@@ -152,7 +152,7 @@ export const CoCurricularActivities = () => {
           <div className="flex-1 relative hidden lg:flex items-center justify-end overflow-visible perspective-[1500px] z-[50]">
             {/* Up/Down Controls */}
             <div
-              className={`absolute right-12 w-64 md:w-80 h-[min(700px,calc(100%-2rem))] pointer-events-none flex flex-col justify-between items-center z-[60] top-1/2 -translate-y-1/2 transition-all duration-500 ${isLensHovering ? "blur-[2px] opacity-40" : ""}`}
+              className={`absolute right-18 w-64 md:w-80 h-[min(700px,calc(100%-2rem))] pointer-events-none flex flex-col justify-center gap-80 items-center z-[60] top-1/2 -translate-y-1/2 transition-all duration-300 ${isLensHovering ? "blur-[2px] opacity-40" : ""}`}
             >
               <button
                 onClick={() =>
