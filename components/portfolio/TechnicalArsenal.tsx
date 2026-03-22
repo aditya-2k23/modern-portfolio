@@ -5,7 +5,7 @@ import ArsenalHoverEffect from "./ArsenalHoverEffect";
 
 export default function TechnicalArsenal() {
   return (
-    <section id="arsenal" className="pt-24">
+    <section id="arsenal" className="pt-24 px-12">
       <SectionHeading
         eyebrow="Section 2"
         title="Technical Arsenal"

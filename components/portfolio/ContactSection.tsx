@@ -7,6 +7,7 @@ import { contactData } from "@/data/index";
 import { Mail, Linkedin, Github, Phone, Send } from "lucide-react";
 import { DottedGlowBackground } from "@/components/ui/dotted-glow-background";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
+import SectionHeading from "./SectionHeading";
 
 const emailServiceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
 const emailTemplateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
@@ -79,7 +80,7 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden pb-24 pt-24 w-full"
+      className="relative overflow-hidden p-24 px-34 w-full"
     >
       <div className="w-full absolute left-0 top-0 pointer-events-none z-0 rotate-180">
         <img
@@ -96,21 +97,19 @@ export default function ContactSection() {
         />
       </div>
       <div className="relative z-10">
-        <div className="mb-14 flex flex-col items-center justify-center space-y-4">
+        <div className="mb-14 flex flex-col items-center justify-center">
           {/* Mobile Badge - visibly hidden on desktop, matches mobile design */}
           <div className="lg:hidden mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-medium uppercase tracking-wider text-slate-300">
             <span className="h-2 w-2 rounded-full bg-emerald-500" />
             Available for opportunities
           </div>
-
-          <h2 className="text-center text-5xl md:text-6xl font-bold tracking-tight text-white">
-            Get in <span className="text-purple">Touch</span>
-          </h2>
-          <p className="mx-auto max-w-lg text-center leading-relaxed text-slate-400">
-            Currently seeking new challenges. Whether you have a project in mind
-            or just want to say hi, my inbox is always open.
-          </p>
         </div>
+
+        <SectionHeading
+          eyebrow="SECTION 06"
+          title="Get in Touch"
+          description="Currently seeking new challenges. Whether you have a project in mind or just want to say hi, my inbox is always open."
+        />
 
         <div className="mx-auto grid max-w-5xl gap-6 lg:grid-cols-2 lg:gap-8">
           <article className="relative overflow-hidden group flex flex-col justify-between rounded-4xl border border-white/10 bg-[#0B0F19] p-8 lg:p-10">

@@ -4,42 +4,11 @@ import { motion } from "framer-motion";
 import SectionHeading from "./SectionHeading";
 import { ExternalLink } from "lucide-react";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
-import {
-  SiJavascript,
-  SiReact,
-  SiNextdotjs,
-  SiNodedotjs,
-  SiExpress,
-  SiMongodb,
-  SiGooglegemini,
-  SiVercel,
-} from "react-icons/si";
+import { trainingData } from "@/data/index";
 
 export default function Training() {
-  const trainingData = {
-    title: "MERN Full Stack Developer",
-    company: "Gokboru Tech Pvt. Ltd",
-    date: "Jun' 25",
-    certificateLink: "#",
-    bullets: [
-      "Completed a six-week industrial training program focused on full-stack web development using modern frameworks like React, NextJS, TailwindCSS and best practices with Git & GitHub.",
-      "Gained practical experience in building dynamic UIs, developing secure RESTful APIs, and integrating databases using Firebase for end-to-end application development.",
-      "Learned deployment workflows, authentication, basic CI/CD setups for production applications.",
-    ],
-    techStack: [
-      { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
-      { name: "React.js", icon: SiReact, color: "#61DAFB" },
-      { name: "Next.js", icon: SiNextdotjs },
-      { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
-      { name: "Express.js", icon: SiExpress },
-      { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
-      { name: "Gemini", icon: SiGooglegemini, color: "#4285F4" },
-      { name: "Vercel", icon: SiVercel },
-    ],
-  };
-
   return (
-    <section id="training" className="pt-24">
+    <section id="training" className="pt-24 px-12">
       <SectionHeading
         eyebrow="Section 5"
         title="Industrial Training & Hands-on Experience"
