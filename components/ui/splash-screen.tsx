@@ -39,7 +39,7 @@ export const SplashScreen = () => {
         >
           {/* Subtle Background Elements */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(6,182,212,0.08),transparent_40%)]" />
-          <div className="absolute inset-0 bg-[url('/bg-grid.svg')] opacity-5" />
+          <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5" />
 
           <motion.div
             initial={{ opacity: 0 }}

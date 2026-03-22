@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import Link from "next/link";
 import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from "react-icons/fa";
 import { contactData } from "@/data";
@@ -25,7 +24,7 @@ export function SocialLinks() {
     },
     {
       name: "Phone",
-      url: `tel:${contactData.phone.replace(/[^0-9+]/g, '')}`,
+      url: `tel:${contactData.phone.replace(/[^0-9+]/g, "")}`,
       icon: <FaPhone className="w-5 h-5" />,
     },
   ];
@@ -44,7 +43,7 @@ export function SocialLinks() {
               "p-2 rounded-full bg-white/5 border border-white/10 text-neutral-400 backdrop-blur-md",
               "transition-all duration-300 shadow-lg",
               "hover:scale-110 hover:text-sky-400 hover:border-sky-400 hover:bg-sky-400/10",
-              "hover:shadow-[0_0_15px_rgba(56,189,248,0.5)]"
+              "hover:shadow-[0_0_15px_rgba(56,189,248,0.5)]",
             )}
             title={link.name}
           >
