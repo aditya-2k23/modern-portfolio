@@ -1,18 +1,19 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { motion, stagger, useAnimate } from "framer-motion";
-import { cn } from "@/utils/cn";
+import { cn } from "@/lib/utils";
 
 export const TextGenerateEffect = ({
   words,
   className,
+  delay = 0,
 }: {
   words: string;
   className?: string;
+  delay?: number;
 }) => {
   const [scope, animate] = useAnimate();
-  let wordsArray = words.split(" ");
+  const wordsArray = useMemo(() => words.split(" "), [words]);
   useEffect(() => {
     animate(
       "span",
@@ -21,10 +22,10 @@ export const TextGenerateEffect = ({
       },
       {
         duration: 2,
-        delay: stagger(0.2),
-      }
+        delay: stagger(0.2, { startDelay: delay }),
+      },
     );
-  }, [scope.current, animate]);
+  }, [animate, delay]);
 
   const renderWords = () => {
     return (
@@ -33,9 +34,7 @@ export const TextGenerateEffect = ({
           return (
             <motion.span
               key={word + idx}
-              className={`${
-                idx > 3 ? "text-purple" : "dark:text-white text-black"
-              } opacity-0`}
+              className={`${idx > 3 ? "text-purple" : "text-white"} opacity-0`}
             >
               {word}{" "}
             </motion.span>
@@ -48,7 +47,7 @@ export const TextGenerateEffect = ({
   return (
     <div className={cn("font-bold", className)}>
       <div className="my-4">
-        <div className=" dark:text-white text-black leading-snug tracking-wide">
+        <div className="text-white leading-snug tracking-wide">
           {renderWords()}
         </div>
       </div>

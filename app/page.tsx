@@ -1,26 +1,33 @@
-import Approach from "@/components/Approach";
-import Clients from "@/components/Clients";
-import Experience from "@/components/Experience";
-import Footer from "@/components/Footer";
-import Grid from "@/components/Grid";
-import Hero from "@/components/Hero";
-import RecentProjects from "@/components/RecentProjects";
+import HeroAbout from "@/components/portfolio/HeroAbout";
+import FloatingResumeButton from "@/components/portfolio/FloatingResumeButton";
 import { FloatingNav } from "@/components/ui/FloatingNav";
-import { navItems } from "@/data";
+import { navItems } from "@/data/index";
+import TechnicalArsenal from "@/components/portfolio/TechnicalArsenal";
+import FeaturedProjects from "@/components/portfolio/FeaturedProjects";
+import CoCurricularActivities from "@/components/portfolio/CoCurricularActivities";
+import Credentials from "@/components/portfolio/Credentials";
+import Training from "@/components/portfolio/Training";
+import ContactSection from "@/components/portfolio/ContactSection";
 
 export default function Home() {
   return (
-    <main className="relative bg-black-100 flex justify-center items-center flex-col mx-auto sm:px-10 overflow-clip">
-      <div className="max-w-7xl w-full">
-        <FloatingNav navItems={navItems} />
-        <Hero />
-        <Grid />
-        <RecentProjects />
-        <Clients />
-        <Experience />
-        <Approach />
-        <Footer />
+    <main className="relative overflow-x-clip bg-[#020617] text-white">
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_0%,rgba(6,182,212,0.22),transparent_45%),radial-gradient(circle_at_85%_15%,rgba(56,189,248,0.2),transparent_35%),linear-gradient(180deg,#020617_0%,#030712_100%)]" />
+
+      <FloatingNav navItems={navItems} />
+
+      <HeroAbout />
+
+      <div className="mx-auto w-full max-w-340 px-4 pb-8 sm:px-6 lg:px-8 space-y-24">
+        <TechnicalArsenal />
+        <FeaturedProjects />
+        <Training />
+        <Credentials />
+        <CoCurricularActivities />
+        <ContactSection />
       </div>
+
+      <FloatingResumeButton />
     </main>
   );
 }
