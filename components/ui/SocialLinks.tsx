@@ -31,13 +31,14 @@ export function SocialLinks() {
 
   return (
     <div className="fixed right-4 top-1/2 -translate-y-1/2 z-50 hidden md:flex flex-col gap-4">
-      {links.map((link) => (
-        <Link
-          key={link.name}
-          href={link.url}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+      {links.map((link) => {
+        const isExternal = /^https?:\/\//i.test(link.url);
+        return (
+          <Link
+            key={link.name}
+            href={link.url}
+            {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+          >
           <div
             className={cn(
               "p-2 rounded-full bg-white/5 border border-white/10 text-neutral-400 backdrop-blur-md",
@@ -50,7 +51,8 @@ export function SocialLinks() {
             {link.icon}
           </div>
         </Link>
-      ))}
+        );
+      })}
     </div>
   );
 }
