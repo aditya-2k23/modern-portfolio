@@ -1,23 +1,13 @@
-import dynamic from "next/dynamic";
 import HeroAbout from "@/components/portfolio/HeroAbout";
 import FloatingResumeButton from "@/components/portfolio/FloatingResumeButton";
 import { FloatingNav } from "@/components/ui/FloatingNav";
 import { navItems } from "@/data/index";
-
-const TechnicalArsenal = dynamic(
-  () => import("@/components/portfolio/TechnicalArsenal"),
-);
-const FeaturedProjects = dynamic(
-  () => import("@/components/portfolio/FeaturedProjects"),
-);
-const CoCurricularActivities = dynamic(
-  () => import("@/components/portfolio/CoCurricularActivities"),
-);
-const Credentials = dynamic(() => import("@/components/portfolio/Credentials"));
-const Training = dynamic(() => import("@/components/portfolio/Training"));
-const ContactSection = dynamic(
-  () => import("@/components/portfolio/ContactSection"),
-);
+import TechnicalArsenal from "@/components/portfolio/TechnicalArsenal";
+import FeaturedProjects from "@/components/portfolio/FeaturedProjects";
+import CoCurricularActivities from "@/components/portfolio/CoCurricularActivities";
+import Credentials from "@/components/portfolio/Credentials";
+import Training from "@/components/portfolio/Training";
+import ContactSection from "@/components/portfolio/ContactSection";
 
 export default function Home() {
   return (
