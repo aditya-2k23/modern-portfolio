@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Manrope, Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "./provider";
 import { cn } from "@/lib/utils";
 
 import { SplashScreen } from "@/components/ui/splash-screen";
@@ -53,19 +52,12 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn("font-sans", inter.variable)}
+      className={cn("font-sans dark", inter.variable)}
     >
       <body className={`${manrope.variable} ${spaceGrotesk.variable}`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <SplashScreen />
-          <SocialLinks />
-          {children}
-        </ThemeProvider>
+        <SplashScreen />
+        <SocialLinks />
+        {children}
       </body>
     </html>
   );
