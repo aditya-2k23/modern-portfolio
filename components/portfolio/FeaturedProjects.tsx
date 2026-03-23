@@ -40,7 +40,7 @@ export default function FeaturedProjects() {
                   href={project.liveUrl}
                   target="_blank"
                   rel="noreferrer"
-                  translateZ="100"
+                  translateZ={100}
                   className="relative block h-60 w-full overflow-hidden rounded-t-3xl border-b border-white/10 cursor-pointer pointer-events-auto z-10"
                 >
                   <Image
@@ -54,21 +54,21 @@ export default function FeaturedProjects() {
 
                 <div className="p-6">
                   <CardItem
-                    translateZ="50"
+                    translateZ={50}
                     className="text-2xl font-extrabold text-white"
                   >
                     {project.title}
                   </CardItem>
                   <CardItem
                     as="p"
-                    translateZ="60"
+                    translateZ={60}
                     className="mt-3 text-sm leading-relaxed text-slate-300"
                   >
                     {project.description}
                   </CardItem>
 
                   <CardItem
-                    translateZ="40"
+                    translateZ={40}
                     className="mt-4 flex flex-wrap gap-2"
                   >
                     {project.techStack.map((tech) => (
@@ -82,7 +82,7 @@ export default function FeaturedProjects() {
                   </CardItem>
 
                   <CardItem
-                    translateZ="40"
+                    translateZ={40}
                     as="ul"
                     className="mt-5 space-y-2 text-sm text-slate-200"
                   >
@@ -95,7 +95,7 @@ export default function FeaturedProjects() {
                   </CardItem>
 
                   <CardItem
-                    translateZ="30"
+                    translateZ={30}
                     as="p"
                     className="mt-5 rounded-xl border border-white/10 bg-white/5 p-3 text-sm text-slate-300"
                   >

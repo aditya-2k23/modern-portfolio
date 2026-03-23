@@ -12,7 +12,6 @@ interface LensProps {
     y: number;
   };
   isStatic?: boolean;
-  isFocusing?: () => void;
   hovering?: boolean;
   setHovering?: (hovering: boolean) => void;
   className?: string;

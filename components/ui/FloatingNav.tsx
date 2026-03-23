@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useRef, useState } from "react";
 import {
   motion,
@@ -31,7 +32,9 @@ export const FloatingNav = ({
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     // Check if current is not undefined and is a number
     if (typeof current === "number") {
-      let direction = current! - scrollYProgress.getPrevious()!;
+      const previous = scrollYProgress.getPrevious();
+      if (previous === undefined) return;
+      let direction = current - previous;
       const nextVisible = scrollYProgress.get() >= 0.05 && direction < 0;
 
       if (visibleRef.current !== nextVisible) {
@@ -60,7 +63,7 @@ export const FloatingNav = ({
           className,
         )}
       >
-        {navItems.map((navItem: any, idx: number) => (
+        {navItems.map((navItem: NavItem, idx: number) => (
           <Link
             key={`link=${idx}`}
             href={navItem.link}
