@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from "react-icons/fa";
 import { contactData } from "@/data";
-import { cn } from "@/utils/cn";
+import { cn } from "@/lib/utils";
 
 export function SocialLinks() {
   const links = [

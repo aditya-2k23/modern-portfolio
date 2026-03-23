@@ -2,7 +2,7 @@
 
 import { useMemo } from "react";
 import { HoverEffect } from "@/components/ui/card-hover-effect";
-import { cn } from "@/utils/cn";
+import { cn } from "@/lib/utils";
 import { skillCategories } from "@/data/index";
 import {
   FaCode,

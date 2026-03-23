@@ -6,19 +6,21 @@ import {
   useScroll,
   useMotionValueEvent,
 } from "framer-motion";
-import { cn } from "@/utils/cn";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
+
+export type NavItem = {
+  name: string;
+  link: string;
+  icon?: React.ReactNode;
+};
 
 export const FloatingNav = ({
   navItems,
   className,
 }: {
-  navItems: {
-    name: string;
-    link: string;
-    icon?: React.ReactNode;
-  }[];
+  navItems: NavItem[];
   className?: string;
 }) => {
   const { scrollYProgress } = useScroll();
