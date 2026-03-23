@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ChevronUp, ChevronDown, Keyboard } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
@@ -11,37 +11,44 @@ import SectionHeading from "./SectionHeading";
 export const CoCurricularActivities = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
   const [isLensHovering, setIsLensHovering] = useState(false);
+  const carouselRef = useRef<HTMLDivElement | null>(null);
 
   // Auto-play interval
   useEffect(() => {
-    if (isHovered) return; // Pause auto-scroll when user is interacting
+    if (isHovered || isFocused) return; // Pause auto-scroll when user is interacting
 
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % certificates.length);
-    }, 4000); // 4 seconds delay
+    }, 5000); // 5 seconds delay
 
     return () => clearInterval(interval);
-  }, [isHovered]);
+  }, [isHovered, isFocused]);
 
-  // Keyboard navigation when hovered
+  // Keyboard navigation scoped to the carousel container
   useEffect(() => {
+    const container = carouselRef.current;
+    if (!container) return;
+
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (!isHovered) return;
-      if (e.key === "ArrowUp") {
+      const target = e.target as Node | null;
+      if (!target || !container.contains(target)) return;
+
+      if (e.key === "ArrowLeft") {
         e.preventDefault();
         setActiveIndex(
           (prev) => (prev - 1 + certificates.length) % certificates.length,
         );
-      } else if (e.key === "ArrowDown") {
+      } else if (e.key === "ArrowRight") {
         e.preventDefault();
         setActiveIndex((prev) => (prev + 1) % certificates.length);
       }
     };
 
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [isHovered]);
+    container.addEventListener("keydown", handleKeyDown);
+    return () => container.removeEventListener("keydown", handleKeyDown);
+  }, [certificates.length]);
 
   const activeCert = certificates[activeIndex];
 
@@ -55,12 +62,12 @@ export const CoCurricularActivities = () => {
 
   return (
     <section
-      className="py-10 relative overflow-hidden bg-[#000319] text-white"
+      className="py-10 relative overflow-hidden bg-black-100 text-white"
       id="co-curricular"
     >
       {/* Global blur overlay when magnifying lens is active */}
       <div
-        className={`fixed inset-0 z-[40] backdrop-blur-[2px] transition-all duration-500 pointer-events-none ${
+        className={`fixed inset-0 z-40 backdrop-blur-[2px] transition-all duration-500 pointer-events-none ${
           isLensHovering ? "opacity-100" : "opacity-0"
         }`}
       />
@@ -70,13 +77,21 @@ export const CoCurricularActivities = () => {
           eyebrow="SECTION 04"
           title="Co-Curricular Activities"
           description="A curated selection of verified professional achievements in advanced cloud architecture and fullstack engineering."
-          className={`relative z-[45] transition-all duration-500 ${isLensHovering ? "blur-[2px] opacity-40" : ""}`}
+          className={`relative z-45 transition-all duration-500 ${isLensHovering ? "blur-[2px] opacity-40" : ""}`}
         />
 
         <div
-          className="flex flex-col lg:flex-row gap-8 mt-10 min-h-[400px] relative"
+          ref={carouselRef}
+          tabIndex={0}
+          className="flex flex-col lg:flex-row gap-8 mt-10 min-h-100 relative outline-none focus:outline-none focus-visible:outline-none focus-visible:ring-0"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
+          onFocus={() => setIsFocused(true)}
+          onBlur={(e) => {
+            if (!e.currentTarget.contains(e.relatedTarget as Node | null)) {
+              setIsFocused(false);
+            }
+          }}
         >
           {/* Detail Panel (Left) */}
           <div className="flex-1 w-full lg:max-w-3xl relative">
@@ -87,10 +102,10 @@ export const CoCurricularActivities = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 50 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
-                className="bg-[#0f1123]/80 backdrop-blur-xl border border-[#cbacf9]/20 p-6 rounded-2xl shadow-[0_0_30px_rgba(203,172,249,0.1)] relative overflow-hidden h-full flex flex-col justify-between"
+                className="bg-[#0f1123]/80 backdrop-blur-xl border border-purple/20 p-6 rounded-2xl shadow-[0_0_30px_rgba(203,172,249,0.1)] relative overflow-hidden h-full flex flex-col justify-between"
               >
                 {/* Glow effect inside card */}
-                <div className="absolute top-0 right-0 w-48 h-48 bg-[#cbacf9]/10 rounded-full blur-[60px] -mr-24 -mt-24 pointer-events-none"></div>
+                <div className="absolute top-0 right-0 w-48 h-48 bg-purple/15 rounded-full blur-[60px] -mr-24 -mt-24 pointer-events-none" />
 
                 <div>
                   <div className="flex justify-between items-start mb-4">
@@ -110,7 +125,7 @@ export const CoCurricularActivities = () => {
                       <p className="text-[10px] font-semibold tracking-wider text-gray-400 uppercase">
                         DATE ISSUED
                       </p>
-                      <p className="text-base font-medium text-[#cbacf9] mt-1">
+                      <p className="text-base font-medium text-purple mt-1">
                         {activeCert.date}
                       </p>
                     </div>
@@ -124,7 +139,7 @@ export const CoCurricularActivities = () => {
                     {activeCert.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-3 py-1 bg-[#cbacf9]/10 text-[#cbacf9] rounded-md text-xs font-medium border border-[#cbacf9]/20"
+                        className="px-3 py-1 bg-purple/10 text-purple rounded-md text-xs font-medium border border-purple/20"
                       >
                         {tag}
                       </span>
@@ -149,10 +164,10 @@ export const CoCurricularActivities = () => {
           </div>
 
           {/* Vertical Orbit (Right) */}
-          <div className="flex-1 relative hidden lg:flex items-center justify-end overflow-visible perspective-[1500px] z-[50]">
+          <div className="flex-1 relative hidden lg:flex items-center justify-end overflow-visible perspective-[1500px] z-50">
             {/* Up/Down Controls */}
             <div
-              className={`absolute right-18 w-64 md:w-80 h-[min(700px,calc(100%-2rem))] pointer-events-none flex flex-col justify-center gap-80 items-center z-[60] top-1/2 -translate-y-1/2 transition-all duration-300 ${isLensHovering ? "blur-[2px] opacity-40" : ""}`}
+              className={`absolute right-18 w-64 md:w-80 h-[min(700px,calc(100%-2rem))] pointer-events-none flex flex-col justify-center gap-80 items-center z-60 top-1/2 -translate-y-1/2 transition-all duration-300 ${isLensHovering ? "blur-[2px] opacity-40" : ""}`}
             >
               <button
                 onClick={() =>
@@ -161,7 +176,8 @@ export const CoCurricularActivities = () => {
                       (prev - 1 + certificates.length) % certificates.length,
                   )
                 }
-                className="pointer-events-auto p-3 rounded-full bg-[#0f1123] border border-[#cbacf9]/50 text-[#cbacf9] hover:bg-[#cbacf9] hover:text-[#000319] hover:scale-110 transition-all shadow-[0_0_20px_rgba(203,172,249,0.3)] z-[60] cursor-pointer"
+                aria-label="Previous certificate"
+                className="pointer-events-auto p-3 rounded-full bg-[#0f1123] border border-purple/50 text-purple hover:bg-purple hover:text-black-100 hover:scale-110 transition-all shadow-[0_0_20px_rgba(203,172,249,0.3)] z-60 cursor-pointer"
               >
                 <ChevronUp className="w-8 h-8" />
               </button>
@@ -170,7 +186,8 @@ export const CoCurricularActivities = () => {
                 onClick={() =>
                   setActiveIndex((prev) => (prev + 1) % certificates.length)
                 }
-                className="pointer-events-auto p-3 rounded-full bg-[#0f1123] border border-[#cbacf9]/50 text-[#cbacf9] hover:bg-[#cbacf9] hover:text-[#000319] hover:scale-110 transition-all shadow-[0_0_20px_rgba(203,172,249,0.3)] z-[60] cursor-pointer"
+                aria-label="Next certificate"
+                className="pointer-events-auto p-3 rounded-full bg-[#0f1123] border border-purple/50 text-purple hover:bg-purple hover:text-black-100 hover:scale-110 transition-all shadow-[0_0_20px_rgba(203,172,249,0.3)] z-60 cursor-pointer"
               >
                 <ChevronDown className="w-8 h-8" />
               </button>
@@ -234,8 +251,8 @@ export const CoCurricularActivities = () => {
                     <div
                       className={`w-72 h-48 md:w-96 md:h-64 rounded-xl flex items-center justify-center overflow-hidden bg-[#0f1123] border ${
                         isCenter
-                          ? "border-[#cbacf9] shadow-[0_0_40px_rgba(203,172,249,0.6)] cursor-none"
-                          : "border-[#cbacf9]/20 shadow-lg group-hover:border-[#cbacf9]/60"
+                          ? "border-purple shadow-[0_0_40px_rgba(203,172,249,0.48)] cursor-none"
+                          : "border-purple/20 shadow-lg group-hover:border-purple/60"
                       } transition-colors duration-300 relative`}
                     >
                       {isCenter ? (
@@ -260,7 +277,7 @@ export const CoCurricularActivities = () => {
                         />
                       )}
                       {!isCenter && (
-                        <div className="absolute inset-0 bg-[#000319]/10 z-10 transition-opacity duration-300 group-hover:opacity-0 pointer-events-none"></div>
+                        <div className="absolute inset-0 bg-black-100/10 z-10 transition-opacity duration-300 group-hover:opacity-0 pointer-events-none"></div>
                       )}
                     </div>
                   </motion.div>
@@ -269,15 +286,15 @@ export const CoCurricularActivities = () => {
             </div>
 
             <div
-              className={`absolute right-0 top-1/2 -translate-y-1/2 w-1 h-12 bg-[#cbacf9] rounded-full shadow-[0_0_15px_rgba(203,172,249,0.8)] transition-all duration-500 ${isLensHovering ? "blur-[2px] opacity-40" : ""}`}
-            ></div>
+              className={`absolute right-0 top-1/2 -translate-y-1/2 w-1 h-12 bg-purple rounded-full shadow-[0_0_15px_rgba(203,172,249,0.8)] transition-all duration-500 ${isLensHovering ? "blur-[2px] opacity-40" : ""}`}
+            />
           </div>
         </div>
 
         <div className="mt-8 flex items-center justify-center lg:justify-start gap-4 opacity-60 animate-pulse">
           <Keyboard className="w-6 h-6 text-white" />
           <p className="text-[10px] md:text-xs tracking-[0.2em] font-medium uppercase mt-1">
-            USE ARROW KEYS OR BUTTONS TO ROTATE CERTIFICATES
+            USE LEFT/RIGHT ARROW KEYS OR BUTTONS TO ROTATE CERTIFICATES
           </p>
         </div>
       </div>
