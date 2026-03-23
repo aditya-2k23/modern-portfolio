@@ -1,11 +1,21 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, animate } from "framer-motion";
 
 export const SplashScreen = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [reducedMotion, setReducedMotion] = useState(false);
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const controls = animate(0, 100, {
+      duration: 1.5,
+      onUpdate: (value) => setProgress(Math.round(value)),
+      ease: "easeInOut",
+    });
+    return () => controls.stop();
+  }, []);
 
   useEffect(() => {
     if (typeof window === "undefined" || !window.matchMedia) return;
@@ -114,11 +124,21 @@ export const SplashScreen = () => {
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="mt-4 text-[9px] sm:text-[11px] md:text-xs font-semibold tracking-[0.3em] sm:tracking-[0.4em] text-slate-400 uppercase"
+                className="mt-4 text-xs sm:text-sm md:text-base font-semibold tracking-[0.3em] sm:tracking-[0.4em] text-slate-400 uppercase"
               >
                 Developer Portfolio
               </motion.p>
             </div>
+
+            {/* Minimal Progress Percentage inside the circle */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+              className="absolute bottom-12 sm:bottom-16 text-sm sm:text-base font-medium tracking-[0.2em] text-[#22d3ee] tabular-nums"
+            >
+              {progress}%
+            </motion.div>
           </motion.div>
         </motion.div>
       )}
