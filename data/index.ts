@@ -55,9 +55,9 @@ export const siteConfig = {
 export const navItems = [
   { name: "Arsenal", link: "#arsenal" },
   { name: "Projects", link: "#projects" },
+  { name: "Training", link: "#training" },
   { name: "Credentials", link: "#credentials" },
   { name: "Co-Curricular", link: "#co-curricular" },
-  { name: "Training", link: "#training" },
   { name: "Contact", link: "#contact" },
 ];
 
@@ -303,7 +303,7 @@ export const trainingData = {
   title: "MERN Full Stack Developer",
   company: "Gokboru Tech Pvt. Ltd",
   date: "Jun' 25",
-  certificateLink: "#",
+  certificateLink: "/Training-cert.png",
   bullets: [
     "Completed a six-week industrial training program focused on full-stack web development using modern frameworks like React, NextJS, TailwindCSS and best practices with Git & GitHub.",
     "Gained practical experience in building dynamic UIs, developing secure RESTful APIs, and integrating databases using Firebase for end-to-end application development.",
