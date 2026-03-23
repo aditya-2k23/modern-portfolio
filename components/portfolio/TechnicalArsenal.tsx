@@ -1,11 +1,9 @@
-"use client";
-
 import SectionHeading from "./SectionHeading";
 import ArsenalHoverEffect from "./ArsenalHoverEffect";
 
 export default function TechnicalArsenal() {
   return (
-    <section id="arsenal" className="pt-24 px-12">
+    <section id="arsenal" className="pt-24 px-4 sm:px-6 lg:px-12">
       <SectionHeading
         eyebrow="Section 2"
         title="Technical Arsenal"

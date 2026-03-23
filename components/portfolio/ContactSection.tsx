@@ -3,6 +3,7 @@
 import { FormEvent, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import Image from "next/image";
 import { contactData } from "@/data/index";
 import { Mail, Linkedin, Github, Phone, Send } from "lucide-react";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
@@ -79,20 +80,22 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden p-24 px-34 w-full"
+      className="relative overflow-hidden py-24 px-8 sm:px-10 lg:px-34 w-full"
     >
-      <div className="w-full absolute left-0 top-0 pointer-events-none z-0 rotate-180">
-        <img
+      <div className="w-full h-full absolute left-0 top-0 pointer-events-none z-0 rotate-180">
+        <Image
           src="/footer-grid.svg"
           alt="grid"
-          className="w-full h-full object-cover opacity-50"
+          fill
+          className="object-cover opacity-50"
         />
       </div>
-      <div className="w-full absolute left-0 bottom-0 pointer-events-none z-0">
-        <img
+      <div className="w-full h-full absolute left-0 bottom-0 pointer-events-none z-0">
+        <Image
           src="/footer-grid.svg"
           alt="grid"
-          className="w-full h-full object-cover opacity-50"
+          fill
+          className="object-cover opacity-50"
         />
       </div>
       <div className="relative z-10">

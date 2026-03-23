@@ -146,7 +146,7 @@ export default function ArsenalHoverEffect() {
         ),
         className: getGridSpan(bucket.category),
         description: (
-          <div className="relative z-10 flex flex-col h-full gap-4 mt-6">
+          <div className="relative z-10 flex flex-col h-full gap-4 mt-4">
             <ul className="flex flex-wrap gap-2 pointer-events-none">
               {bucket.skills.map((skill) => (
                 <li

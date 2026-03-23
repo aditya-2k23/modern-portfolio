@@ -8,7 +8,7 @@ import { trainingData } from "@/data/index";
 
 export default function Training() {
   return (
-    <section id="training" className="pt-24 px-12">
+    <section id="training" className="pt-24 px-4 sm:px-6 lg:px-12">
       <SectionHeading
         eyebrow="Section 5"
         title="Industrial Training & Hands-on Experience"

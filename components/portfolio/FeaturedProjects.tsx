@@ -8,7 +8,7 @@ import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 
 export default function FeaturedProjects() {
   return (
-    <section id="projects" className="pt-20 px-6">
+    <section id="projects" className="pt-20 px-4 sm:px-6">
       <SectionHeading
         eyebrow="Section 3"
         title="Featured Projects"

@@ -52,9 +52,9 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn("font-sans dark", inter.variable)}
+      className={cn("font-sans dark", inter.variable, manrope.variable, spaceGrotesk.variable)}
     >
-      <body className={`${manrope.variable} ${spaceGrotesk.variable}`}>
+      <body>
         <SplashScreen />
         <SocialLinks />
         {children}
