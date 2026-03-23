@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import { useEffect, useMemo } from "react";
 import { motion, stagger, useAnimate } from "framer-motion";
@@ -26,7 +25,7 @@ export const TextGenerateEffect = ({
         delay: stagger(0.2, { startDelay: delay }),
       },
     );
-  }, [scope.current, animate, delay]);
+  }, [animate, delay]);
 
   const renderWords = () => {
     return (
