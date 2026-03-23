@@ -262,6 +262,7 @@ export const credentialsData = {
       date: "Oct 2025",
       description:
         "Comprehensive understanding of cloud computing fundamentals, database architecture, and OCI services. Hands-on experience with cloud infrastructure configuration, database querying, security protocols, and cost optimization strategies.",
+      tags: ["OCI", "Cloud", "Security"],
     },
     {
       name: "Introduction to Machine Learning",
@@ -271,6 +272,7 @@ export const credentialsData = {
       date: "Apr 2025",
       description:
         "In-depth study of supervised and unsupervised learning algorithms, neural network architectures, model evaluation metrics, ensemble methods, and reinforcement learning fundamentals with practical implementations.",
+      tags: ["ML", "Modeling", "Data"],
     },
   ],
   achievements: [
@@ -327,6 +329,7 @@ export const certificatesData = [
     title: "Google I/O Jalandhar",
     issuer: "Google Developer Groups Jalandhar",
     date: "Aug 2024",
+    image: "/certificates/cert1.png",
     description:
       "This event was a local Google I/O Extended 2024 meetup in Jalandhar, focused on updates to Google technologies (Android, Web, Cloud, AI, etc.) and community networking for developers.",
     tags: ["#GDG", "#GoogleIO2024", "#AI", "#GoogleCloud", "#GoogleUpdates"],
@@ -336,6 +339,7 @@ export const certificatesData = [
     title: "AWS Student Community Day Workshop",
     issuer: "AWS Cloud Clubs",
     date: "Nov 2025",
+    image: "/certificates/cert2.png",
     description:
       "Participated in a hands-on workshop at the AWS Student Community Day in Jalandhar. The event provided practical exposure to Amazon Web Services (AWS) fundamentals and modern cloud computing concepts.",
     tags: ["#AWS", "#CloudComputing", "#CloudInfrastructure", "#Architecture"],
@@ -345,6 +349,7 @@ export const certificatesData = [
     title: "TECH-A-ZON: A Session on Git and GitHub",
     issuer: "Changemakers of Amazon Club",
     date: "Not Specified",
+    image: "/certificates/cert3.jpg",
     description:
       "Participated in 'TECH-A-ZON', a dedicated session focused on Git and GitHub organized by the Changemakers of Amazon Club. Acquired practical knowledge in version control systems, efficient repository management, and collaborative software development workflows.",
     tags: ["#Git", "#GitHub", "#VersionControl", "#SoftwareDevelopment"],
@@ -354,6 +359,7 @@ export const certificatesData = [
     title: "Code Off Duty - Web Hackathon",
     issuer: "Coding Wise",
     date: "Mar 2024",
+    image: "/certificates/cert4.png",
     description:
       "Participated in an intensive two-day web hackathon. Collaborated under a tight deadline to develop innovative web solutions, demonstrating strong problem-solving skills, creativity, and effective teamwork.",
     tags: ["#Hackathon", "#WebDevelopment", "#ProblemSolving", "#Teamwork"],
@@ -363,6 +369,7 @@ export const certificatesData = [
     title: "CODE STORM 36-Hour Hackathon",
     issuer: "Microsoft Learn Student Ambassadors & Spirit Organisation",
     date: "Aug 2024",
+    image: "/certificates/cert5.png",
     description:
       "Participated in the CODE STORM hackathon, engaging in 36 hours of intensive, non-stop coding. Demonstrated rapid problem-solving, creativity, and innovation to build tech solutions under pressure.",
     tags: ["#Hackathon", "#MicrosoftLearn", "#Innovation", "#Coding"],
@@ -372,6 +379,7 @@ export const certificatesData = [
     title: "Google AI Essentials",
     issuer: "Google (via Coursera)",
     date: "Jul 2024",
+    image: "/certificates/cert6.png",
     description:
       "Successfully completed the Google AI Essentials course. Acquired fundamental knowledge in artificial intelligence and learned how to practically apply generative AI tools to enhance productivity and streamline workflows.",
     tags: [
@@ -386,6 +394,7 @@ export const certificatesData = [
     title: "Dark Code Derby",
     issuer: "Capgemini Students Club 'Techgem Sphere'",
     date: "Apr 2024",
+    image: "/certificates/cert7.png",
     description:
       "An intensive competitive coding event. Applied strong knowledge of data structures and algorithms using only python to solve complex challenges under time constraints, further sharpening my competitive programming skills.",
     tags: [
@@ -400,6 +409,7 @@ export const certificatesData = [
     title: "Google AI Essentials",
     issuer: "Google (via Coursera)",
     date: "Jul 2024",
+    image: "/certificates/cert8.png",
     description:
       "Earned the Google AI Essentials certification, demonstrating a foundational understanding of artificial intelligence. Gained practical experience in utilizing generative AI tools to streamline workflows, improve efficiency, and enhance overall productivity.",
     tags: [
@@ -414,6 +424,7 @@ export const certificatesData = [
     title: "Hackatron Finalist - Infotsav'25",
     issuer: "ABV-IIITM Gwalior",
     date: "Oct 2025",
+    image: "/certificates/cert9.jpg",
     description:
       "Achieved a finalist position at the Infotsav'25 Hackatron with team 'PSUEDOCODERS'. Recognized for demonstrating strong technical skills, perseverance, and remarkable performance during the competitive hackathon.",
     tags: ["#Hackathon", "#Infotsav25", "#Finalist", "#Teamwork"],
@@ -423,6 +434,7 @@ export const certificatesData = [
     title: "JavaScript Algorithms and Data Structures (Beta)",
     issuer: "freeCodeCamp",
     date: "Aug 2024",
+    image: "/certificates/cert10.png",
     description:
       "Successfully completed a rigorous 300-hour developer certification focused on JavaScript. Mastered core programming fundamentals, algorithmic thinking, and efficient data handling techniques.",
     tags: ["#JavaScript", "#DataStructures", "#Algorithms", "#freeCodeCamp"],

@@ -52,13 +52,7 @@ export const CoCurricularActivities = () => {
 
   const activeCert = certificates[activeIndex];
 
-  // Helper for images based on ID since files have different extensions/names
-  const getCertImage = (id: number) => {
-    if (id === 3) return "/certificates/cert3.jpg";
-    if (id === 9) return "/certificates/cert9.jpg";
-    if (id > 11) return `/certificates/cert1.png`; // fallback if id exceeds 11 currently
-    return `/certificates/cert${id}.png`;
-  };
+
 
   return (
     <section
@@ -153,7 +147,7 @@ export const CoCurricularActivities = () => {
                     as="button"
                     className="w-full flex items-center justify-center text-sm font-bold tracking-wider bg-[#0f1123] text-white py-3 cursor-pointer"
                     onClick={() =>
-                      window.open(getCertImage(activeCert.id), "_blank")
+                      window.open(activeCert.image, "_blank")
                     }
                   >
                     VIEW CERTIFICATE
@@ -242,7 +236,7 @@ export const CoCurricularActivities = () => {
                     }}
                     onClick={() => {
                       if (isCenter) {
-                        window.open(getCertImage(cert.id), "_blank");
+                        window.open(cert.image, "_blank");
                       } else {
                         setActiveIndex(index);
                       }
@@ -264,14 +258,14 @@ export const CoCurricularActivities = () => {
                           setHovering={setIsLensHovering}
                         >
                           <img
-                            src={getCertImage(cert.id)}
+                            src={cert.image}
                             alt={cert.title}
                             className="w-full h-full object-cover opacity-100 scale-100"
                           />
                         </Lens>
                       ) : (
                         <img
-                          src={getCertImage(cert.id)}
+                          src={cert.image}
                           alt={cert.title}
                           className="w-full h-full object-cover transition-all duration-300 opacity-80 scale-105 group-hover:opacity-100"
                         />
