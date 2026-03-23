@@ -58,12 +58,12 @@ const FactCard = memo(({ label, value }: { label: string; value: string }) => {
         transition: "transform 0.1s ease-out",
         willChange: "transform",
       }}
-      className="flex-1 min-w-35 rounded-2xl border border-white/10 bg-linear-to-b from-white/5 to-transparent p-5 backdrop-blur hover:border-cyan-400/30 transition-colors"
+      className="flex-1 min-w-35 rounded-2xl border border-white/10 bg-linear-to-b from-slate-300/8 to-transparent p-5 backdrop-blur hover:border-cyan-400/30 transition-colors"
     >
       <p className="text-xs uppercase tracking-[0.22em] text-cyan-500 font-semibold">
         {label}
       </p>
-      <p className="mt-2 text-sm font-medium leading-relaxed text-white/90">
+      <p className="mt-2 text-sm font-medium leading-relaxed text-slate-100">
         {value}
       </p>
     </article>

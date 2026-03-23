@@ -135,10 +135,10 @@ export default function ArsenalHoverEffect() {
               <Icon size={24} />
             </div>
             <div className="flex flex-col">
-              <h3 className="text-lg sm:text-xl font-bold text-neutral-800 dark:text-neutral-100 tracking-wide uppercase">
+              <h3 className="text-lg sm:text-xl font-bold text-neutral-100 tracking-wide uppercase">
                 {bucket.category}
               </h3>
-              <p className="text-[10px] sm:text-xs text-neutral-500 dark:text-neutral-400 uppercase tracking-widest font-semibold mt-0.5">
+              <p className="text-[10px] sm:text-xs text-neutral-400 uppercase tracking-widest font-semibold mt-0.5">
                 {subtitle}
               </p>
             </div>
@@ -154,16 +154,16 @@ export default function ArsenalHoverEffect() {
                   className={cn(
                     "flex items-center gap-2 rounded-full border px-3 py-1.5 text-[13px] font-medium",
                     skill.featured
-                      ? "border-cyan-500/30 bg-cyan-500/10 text-cyan-500 dark:text-cyan-300"
-                      : "border-black/5 dark:border-white/10 bg-black/5 dark:bg-white/5 text-slate-700 dark:text-slate-300",
+                      ? "border-cyan-500/30 bg-cyan-500/10 text-cyan-300"
+                      : "border-white/10 bg-white/5 text-slate-300",
                   )}
                 >
                   <span
                     className={cn(
                       "flex items-center justify-center rounded-full p-1",
                       skill.featured
-                        ? "bg-cyan-500/20 text-cyan-600 dark:text-cyan-200"
-                        : "bg-black/10 dark:bg-white/10 text-slate-600 dark:text-slate-400",
+                        ? "bg-cyan-500/20 text-cyan-200"
+                        : "bg-white/10 text-slate-400",
                     )}
                     style={skill.color ? { color: skill.color } : {}}
                   >

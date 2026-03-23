@@ -19,7 +19,7 @@ export default function Training() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
-        className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#0B0F19] p-6 lg:p-10 shadow-black/10 ring-1 ring-black/5 dark:shadow-white/10 dark:ring-white/5 group"
+        className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#0B0F19] p-6 lg:p-10 shadow-white/10 ring-1 ring-white/5 group"
       >
         <div className="relative z-10 w-full h-full">
           <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4 border-b border-white/10 pb-6">

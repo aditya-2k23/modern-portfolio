@@ -150,7 +150,7 @@ export const DraggableCardBody = ({
         style={{
           opacity: glareOpacity,
         }}
-        className="pointer-events-none absolute inset-0 rounded-4xl bg-white mix-blend-overlay shadow-inner z-20"
+        className="pointer-events-none absolute inset-0 rounded-4xl bg-slate-200/35 mix-blend-overlay shadow-inner z-20"
       />
     </motion.div>
   );
