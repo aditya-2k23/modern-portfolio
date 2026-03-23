@@ -1,60 +1,37 @@
-# My Portfolio
+# Modern Portfolio
 
-This is my personal portfolio website. It is built with NextJS and TailwindCSS. It is a simple, clean and modern UI based website that showcases my projects, education, certifications and skills.
+A personal portfolio built with **Next.js**, **React**, and **Tailwind CSS**—showcasing projects, skills, credentials, and more. The site is fully dark mode, accessible, and optimized for modern web standards.
 
-See the app [Live](https://aditya-modern-portfolio.vercel.app/)
+[Live Demo](https://aditya-modern-portfolio.vercel.app/)
+
+## Features
+
+- **Dark Mode Only:** All light mode/theme toggling removed for a consistent dark experience.
+- **Modern UI:** Clean, animated, and responsive layouts using Tailwind CSS and Framer Motion.
+- **Accessibility:** Improved keyboard navigation and ARIA support, especially in carousels and interactive sections.
+- **Portfolio Sections:** Arsenal (skills), Featured Projects, Credentials, Co-Curricular Activities, Training, and Contact.
+- **Certificates & Training:** View certificates and training credentials, with direct links to certificate images.
+- **Performance:** Static imports for all main sections, optimized for speed.
+- **Dead Code Removed:** Unused components and legacy code cleaned up for maintainability.
 
 ## Tech Stack
 
-- [React](https://reactjs.org/)
-- [Next.js](https://nextjs.org/)
-- [TailwindCSS](https://tailwindcss.com/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [Aceternity UI](https://aceternity.io/)
+- Next.js, React, TypeScript
+- Tailwind CSS
+- Framer Motion
+- Aceternity UI
 
-### Getting Started
-
-First, clone the repository:
+## Getting Started
 
 ```bash
 git clone https://github.com/aditya-2k23/modern-portfolio
-```
-
-Install the dependencies:
-
-```bash
+cd modern-portfolio
 npm install
-# or
-yarn install
-# or
-pnpm install
-# or
-bun install
-```
-
-Run the development server:
-
-```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view locally.
 
-### EmailJS setup (contact form)
+## Contact
 
-The contact form uses [EmailJS](https://www.emailjs.com/) to send messages directly from the client.
-
-- Copy `.env.example` to `.env.local`.
-- Add your EmailJS values:
-  - `NEXT_PUBLIC_EMAILJS_SERVICE_ID`
-  - `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID`
-  - `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY`
-- Restart the dev server after updating env values.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+For feedback or collaboration, use the contact form on the site or email: <holaaditya123@gmail.com>
