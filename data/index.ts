@@ -439,4 +439,14 @@ export const certificatesData = [
       "Successfully completed a rigorous 300-hour developer certification focused on JavaScript. Mastered core programming fundamentals, algorithmic thinking, and efficient data handling techniques.",
     tags: ["#JavaScript", "#DataStructures", "#Algorithms", "#freeCodeCamp"],
   },
+  {
+    id: 11,
+    title: "Python for Data Science, AI & Development",
+    issuer: "IBM (via Coursera)",
+    date: "Mar 2026",
+    image: "/certificates/cert11.png",
+    description:
+      "Completed the IBM-authorized course focusing on Python programming. Gained hands-on experience applying Python to data science, artificial intelligence, and software development workflows.",
+    tags: ["#Python", "#DataScience", "#AI", "#IBM"],
+  },
 ];
