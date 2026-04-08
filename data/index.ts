@@ -243,7 +243,7 @@ export const credentialsData = {
     {
       title: "Intermediate",
       institute: "Sant Raghbir Singh Aims Sr. Sec. School",
-      score: "Percentage: 86.2%",
+      score: "Percentage: 70.2%",
       year: "2022 - 2023",
     },
     {
@@ -277,9 +277,9 @@ export const credentialsData = {
   ],
   achievements: [
     {
-      title: "Top 100 Hackathon Finalist",
+      title: "2 times top 100 Hackathon Finalist",
       description:
-        "Selected among top 100 teams in a national-level programming competition showcasing innovative problem-solving skills.",
+        "Selected among top 100 teams in two national-level programming competitions showcasing innovative problem-solving and collaborative skills.",
     },
     {
       title: "Cloud & DevOps Workshops",
